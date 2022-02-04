@@ -1,0 +1,147 @@
+.footer {
+  // background: linear-gradient(269deg, #000000 40%, #0000004d 100%),
+  //   url(../../../../assets/images/helper.png);
+  background: #000000 0% 0% no-repeat padding-box;
+  opacity: 0.9;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin-top: -1px;
+  height: auto;
+  padding: 50px 0px;
+}
+
+.foot-1 {
+  padding-right: 20px;
+  margin-top: 40px;
+}
+
+.foot-1 img {
+  width: 50%;
+}
+
+.foot-social {
+  margin-top: 15px;
+}
+.foot-social img {
+  width: 25px;
+  margin-right: 15px;
+}
+
+.foot {
+  margin-top: 40px;
+  padding-top: 60px;
+}
+
+.foot img {
+  width: 60%;
+  float: right;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li a {
+  text-decoration: none;
+  color: var(--white-50);
+  margin-bottom: 30px;
+  line-height: 40px;
+  font-weight: 400;
+}
+ul li a:hover {
+  text-decoration: none;
+  color: var(--white);
+  margin-bottom: 30px;
+  line-height: 40px;
+  font-weight: 400;
+}
+
+ul li a i {
+  color: var(--white);
+  margin-right: 10px;
+  font-size: 1.25rem;
+}
+
+.copyright {
+  border-top: 1px solid var(--white-50);
+  padding: 15px 0px;
+  margin-top: 40px;
+}
+.copyright a {
+  color: var(--white-50);
+  font-size: 0.9rem;
+  padding-left: 0px;
+}
+.copyright a:hover {
+  color: var(--white);
+}
+
+// Media
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 595px) {
+  .foot-1 {
+    padding: 30px;
+    margin-top: 0px;
+  }
+
+  .foot-1 img {
+    width: 50%;
+  }
+
+  .foot-social {
+    margin-top: 15px;
+  }
+  .foot-social img {
+    width: 25px;
+    margin-right: 15px;
+  }
+
+  .foot {
+    margin-top: 0px;
+    padding: 10px 30px;
+  }
+
+  .foot img {
+    width: 100%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media screen and (min-width: 600px) and (max-width: 799px) {
+  .foot-1 {
+    padding: 30px;
+    margin-top: 0px;
+  }
+
+  .foot-1 img {
+    width: 50%;
+  }
+
+  .foot-social {
+    margin-top: 15px;
+  }
+  .foot-social img {
+    width: 25px;
+    margin-right: 15px;
+  }
+
+  .foot {
+    margin-top: 0px;
+    padding: 10px 30px;
+  }
+
+  .foot img {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1099px) {
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1299px) {
+}
+
+@media screen and (min-width: 1300px) {
+}

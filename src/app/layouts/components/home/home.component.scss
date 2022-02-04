@@ -42,7 +42,7 @@
 
 .banner-content {
   margin-top: 100px;
-  padding-top: 50px;
+  // padding-top: 50px;
 }
 .banner-content h2 {
   color: var(--white);
@@ -65,8 +65,18 @@
   margin-top: 30px;
   color: var(--white);
 }
+
 .follow-me {
-  padding: 10px 20px;
+  position: absolute;
+  bottom: 0px;
+  left: 5%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -5%);
+  transform: translate(0, -5%);
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: opacity 0.3s;
 }
 
 .socials a {
@@ -81,16 +91,6 @@
   text-decoration: none;
   margin-right: 7px;
   width: 20px !important;
-}
-
-#sdc {
-  background: url(https://www.nxworld.net/example/css-scroll-down-button/bg10.jpg)
-    center center / cover no-repeat;
-}
-
-#sdc {
-  background: url(https://www.nxworld.net/example/css-scroll-down-button/bg10.jpg)
-    center center / cover no-repeat;
 }
 
 .demo {
@@ -240,13 +240,13 @@
 }
 
 #helper {
-  background: linear-gradient(269deg, #000000 0%, #0000004d 100%),
+  background: linear-gradient(269deg, #000000 40%, #0000004d 100%),
     url(../../../../assets/images/helper.png);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  margin-top: -2px;
+  margin-top: -1px;
   height: auto;
   padding: 50px 0px;
 }
@@ -300,7 +300,6 @@
 
 /*---media start----*/
 
-// Media
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 595px) {
   .banner-img-holder {
@@ -319,7 +318,8 @@
     left: 0px;
   }
   .bb {
-    padding: 0px 20px;
+    padding: 10px 20px;
+    margin-top: 15px;
   }
 
   .banner-base {
@@ -409,12 +409,120 @@
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media screen and (min-width: 600px) and (max-width: 799px) {
+  .banner-content {
+    margin-top: 20px;
+  }
+  h2 {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
+  .desc {
+    font-size: 0.7rem;
+  }
+
+  .hc {
+    padding: 20px;
+  }
+
+  .help-card .row .col-d-2 {
+    width: 10%;
+  }
+  .help-card .row .pr-20 {
+    padding-right: 0px;
+  }
+  .help-card .row .col-d-10 {
+    width: 90%;
+  }
+
+  #meet-lauren {
+    height: auto;
+  }
+  .mrn {
+    min-height: 547px;
+  }
+  .mrn img {
+    position: relative;
+    height: 500px;
+    width: auto;
+    bottom: 0;
+  }
+  #helper {
+    background: var(--secondary-color);
+    margin-top: -1px;
+    height: auto;
+    padding: 50px 0px;
+  }
+  .banner-base {
+    margin-top: 140px;
+    color: var(--white);
+  }
 }
 
-/* Medium devices (landscape tablets, 800px and up) */
-@media only screen and (min-width: 800px) and (max-width: 991px) {
+@media screen and (min-width: 800px) and (max-width: 1099px) {
+  .banner-content {
+    margin-top: 20px;
+  }
+  h2 {
+    font-size: 3rem;
+    line-height: 3.9rem;
+  }
+  .desc {
+    font-size: 0.99rem;
+    margin-bottom: 30px;
+  }
+
+  .hc {
+    padding: 20px;
+  }
+
+  .help-card .row .col-d-2 {
+    width: 10%;
+  }
+  .help-card .row .pr-20 {
+    padding-right: 0px;
+  }
+  .help-card .row .col-d-10 {
+    width: 90%;
+  }
+
+  #meet-lauren {
+    height: auto;
+  }
+  .mm-content .desc-one {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  .mrn {
+    min-height: auto;
+    width: 100%;
+  }
+  .mrn img {
+    position: relative;
+    height: auto;
+    width: 100%;
+    bottom: 0px;
+    margin-top: 400px;
+  }
+  #helper {
+    background: linear-gradient(269deg, #000000 40%, #0000004d 100%),
+      url("../../../../assets/images/helper.png");
+    background-size: cover;
+    margin-top: -1px;
+    height: auto;
+    padding: 50px 0px;
+  }
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+@media screen and (min-width: 1100px) and (max-width: 1299px) {
+  h2 {
+    font-size: 3.05rem;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  h2 {
+    font-size: 4.05rem;
+  }
 }

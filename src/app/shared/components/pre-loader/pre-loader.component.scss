@@ -1,0 +1,63 @@
+.pre-loader {
+  background-color: var(--secondary-color);
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.c-div {
+  width: 15rem;
+  height: 15rem;
+}
+.rot {
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+  border-right: 0.2rem solid var(--primary-color);
+  border-radius: 50%;
+  animation: pre 2s linear infinite;
+  top: 44%;
+  left: 46%;
+  transform: translate(-44%, -46%);
+}
+@keyframes pre {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.lh {
+  color: #fff;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Media
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 595px) {
+  .rot {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    border-right: 0.17rem solid var(--primary-color);
+    border-radius: 50%;
+    animation: pre 2s linear infinite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .c-div {
+    width: 7.5rem;
+    height: 7.5rem;
+  }
+  .c-div img {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}

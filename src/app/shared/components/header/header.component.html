@@ -1,0 +1,24 @@
+<header>
+  <div class="navbar sticky">
+    <a routerLink="/" class="logo">
+      <img [src]="logo" alt="Learning Pirate" />
+    </a>
+
+    <input type="checkbox" id="nav" class="hidden" hidden />
+    <label for="nav" class="nav__open"><i></i><i></i><i></i></label>
+    <div class="nav">
+      <ul class="nav__items">
+        <li class="nav__item" *ngFor="let item of list">
+          <a [routerLink]="item.url" class="nav__link">
+            {{ item.title }}
+          </a>
+        </li>
+        <li class="btn get-started">
+          <a routerLink="/membership" class="nav__link">
+            Join the crew
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>

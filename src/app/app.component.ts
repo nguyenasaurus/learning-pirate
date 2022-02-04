@@ -1,10 +1,53 @@
 import { Component } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'learning-pirate';
+  title = 'Learning Pirate';
+
+  constructor() {}
+
+  ngOnInit(): void {
+    $(window).on('load', function () {
+      $('.pre-loader').delay(500).fadeOut('slow');
+      $('body').removeClass('hid');
+    });
+
+    $(window).on('scroll', function (e) {
+      var $el = $('.sticky');
+      var isPositionFixed = $el.css('position') == 'fixed';
+      if ($(this).scrollTop()! > 60 && !isPositionFixed) {
+        $el.css({
+          background: '#000000',
+          position: 'fixed',
+          top: '0px',
+          width: '100%',
+        });
+      }
+      if ($(this).scrollTop()! < 60 && isPositionFixed) {
+        console.log(1);
+        $el.css({
+          background: 'transparent',
+          position: 'static',
+          top: '0px',
+        });
+      }
+    });
+
+    $(function () {
+      // Back to top
+      $('.go-top').on('click', function () {
+        $('html, body').animate(
+          {
+            scrollTop: '0',
+          },
+          1200
+        );
+      });
+    });
+  }
 }

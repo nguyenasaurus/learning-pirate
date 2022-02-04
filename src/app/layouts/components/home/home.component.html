@@ -1,0 +1,150 @@
+<section class="banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-d-6 col-t-4">
+        <div class="banner-img-holder">
+          <img [src]="bgImage" alt="" class="img">
+        </div>
+      </div>
+      <div class="col-d-6 col-t-8">
+        <div class="banner-content">
+          <h2>Revolutionizing the way we learn and design learning with <span>brain science.</span></h2>
+          <p class="desc">
+            Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy Eirmod Tempor Invidunt Ut Labore Et
+            Dolore Magna Aliquyam Erat, Sed Diam Voluptua. At Vero Eos Et Accusam Et Justo Duo Dolores Et Ea Rebum. Stet
+            Clita Kasd Gubergren.
+          </p>
+        </div>
+
+        <div class="bb">
+          <button class="btn bb mt-50" routerLink="/membership">
+            Join the Learning Pirate Crew
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row banner-base">
+      <div class="col-d-6 col-t-6 follow-me">
+        <div class="">Follow Me</div>
+        <div class="socials">
+          <a *ngFor="let item of socialPages" [href]="item.url" target="_blank">
+            <img [src]="item.icon" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="col-d-6 col-t-6">
+        <div id="sdc" class="demo">
+          <a (click)="toTop()">
+            Scroll&nbsp;&nbsp; <span></span> &nbsp; &nbsp; down
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<app-partners></app-partners>
+
+<section id="meet-lauren">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-5 col-d-5 col-t-5">
+        <div class="mm-content">
+          <h3>
+            <span>Meet Lauren.<br></span>
+            Science translator, learning scientist, and self-proclaimed pirate.
+          </h3>
+          <div class="desc-one">
+            Learning Pirate draws upon the latest research from neuroscience, cognitive and behavioral science to:
+          </div>
+          <div class="desc-two">
+            scientifically design learning teach people about their brains, how they operate and how this knowledge can
+            be accessed to enhance how we think, work, feel and learn for everyday performance and improvement.
+          </div>
+          <div class="btn-holder">
+            <button class="btn">Work with Lauren</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-7 col-d-7 col-t-7">
+        <div class="mrn parent">
+          <img src="../../../../assets/images/meetmuareen.png" alt="" class="child-bottom">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="helper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-6 col-d-6 col-t-6"></div>
+      <div class="col-xl-6 col-d-6 col-t-6 hc">
+        <div class="help">
+          <h4>How I can <span>help</span> </h4>
+        </div>
+        <div class="desc">
+          <p>The Cold Hard Truth Is That The E-Learning Industry Is Crowded And Competitive. If You Want To Grow Your
+            Career As A Knowledge Entrepreneur You Need A Course That Delivers More Value!</p>
+        </div>
+        <div class="row">
+          <div class="col-d-6">
+            <div class="help-card">
+              <div class="row pr-20">
+                <div class="col-d-2">
+                  <img src="../../../../assets/images//file-find.svg" alt="">
+                </div>
+                <div class="col-d-10">
+                  <h4>Course Assessment</h4>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique cupiditate expedita dolor non
+                    fugiat, explicabo minus distinctio eius id deserunt mollitia quibusdam libero quas eveniet
+                    voluptatum
+                    delectus omnis? Id, nulla?</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="help-card">
+              <div class="row pr-20">
+                <div class="col-d-2">
+                  <img src="../../../../assets/images//brain.svg" alt="">
+                </div>
+                <div class="col-d-10">
+                  <h4>Course Assessment</h4>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique cupiditate expedita dolor non
+                    fugiat, explicabo minus distinctio eius id deserunt mollitia quibusdam libero quas eveniet
+                    voluptatum
+                    delectus omnis? Id, nulla?</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-d-6">
+            <div class="help-card">
+              <div class="row pl-20">
+                <div class="col-d-2">
+                  <img src="../../../../assets/images//pn.svg" alt="">
+                </div>
+                <div class="col-d-10">
+                  <h4>Course Assessment</h4>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique cupiditate expedita dolor non
+                    fugiat, explicabo minus distinctio eius id deserunt mollitia quibusdam libero quas eveniet
+                    voluptatum
+                    delectus omnis? Id, nulla?</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-testimonial></app-testimonial>
+
+<app-call-to-action></app-call-to-action>

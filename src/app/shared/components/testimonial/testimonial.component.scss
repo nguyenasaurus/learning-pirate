@@ -1,0 +1,134 @@
+#testimonials {
+  background: #263043;
+  height: 611px;
+  min-height: 610px;
+  padding: 150px 0px 150px 150px;
+  width: 100%;
+}
+
+.row {
+  margin-right: 0px !important;
+  padding-right: 0px !important;
+}
+
+.intro-cont {
+  padding-right: 50px;
+}
+.intro-cont h3 {
+  font-size: 35px;
+  line-height: 45px;
+  color: var(--white);
+  font-weight: bold;
+}
+.intro-cont h3 span {
+  font-size: 35px;
+  line-height: 45px;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+.intro-cont p {
+  font-size: 16px;
+  line-height: 30px;
+  color: var(--white-50);
+  margin-top: 25px;
+}
+.intro-cont .action {
+  margin-top: 74px;
+}
+
+.content-wrapper .testimony-card {
+  background: #ffffff10;
+  width: 580px;
+  border-radius: 10px;
+  padding: 62px 20px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  display: inline-block;
+  white-space: normal;
+  overflow: auto;
+}
+
+.testimony-card .row {
+  margin-right: 0px !important;
+  padding-right: 0px !important;
+}
+
+.testimony-card-inner p {
+  color: var(--white);
+  text-transform: capitalize;
+}
+.mmb {
+  margin-bottom: -10px;
+}
+small {
+  color: var(--white-50);
+  margin-top: -20px;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--white);
+}
+
+.content-wrapper {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.content-wrapper .slide-indicator {
+  width: 35px;
+  height: 0px;
+  border: 4px solid var(--white-50);
+  border-radius: 4px;
+  float: left;
+  margin-right: 15px;
+}
+
+.content-wrapper .slide-indicator:hover {
+  border: 4px solid var(--white);
+}
+
+.content-wrapper .slide-indicator.active {
+  width: 35px;
+  height: 0px;
+  border: 4px solid var(--white);
+  border-radius: 4px;
+  float: left;
+  margin-right: 15px;
+}
+
+// Media
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 595px) {
+  #testimonials {
+    height: auto;
+    padding: 20px !important;
+    width: 100% !important;
+  }
+
+  .intro-cont .action {
+    margin: 24px 0px;
+  }
+
+  .content-wrapper .testimony-card {
+    background: #ffffff10;
+    width: 100%;
+    border-radius: 10px;
+    padding: 22px 10px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+    white-space: normal;
+    overflow: auto;
+  }
+
+  h3,
+  h4 {
+    font-size: 1.22rem;
+    line-height: 1.8rem;
+  }
+}

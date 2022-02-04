@@ -1,0 +1,22 @@
+#partners {
+  background: var(--scaffold-background-color-2);
+  padding: 50px 50px;
+}
+
+.partner-container {
+  background: var(--scaffold-background-color-2);
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+}
+
+.partner-item {
+  margin: 4px;
+  flex: 0 1 calc(20% - 8px);
+}
+
+.partner-item img {
+  height: 53px;
+  width: auto;
+}

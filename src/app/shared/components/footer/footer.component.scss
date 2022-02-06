@@ -35,7 +35,7 @@
 }
 
 .foot img {
-  width: 60%;
+  width: 100%;
   float: right;
 }
 
@@ -60,7 +60,7 @@ ul li a:hover {
 
 ul li a i {
   color: var(--white);
-  margin-right: 10px;
+  margin-right: 5px;
   font-size: 1.25rem;
 }
 
@@ -141,7 +141,4 @@ ul li a i {
 }
 
 @media screen and (min-width: 1100px) and (max-width: 1299px) {
-}
-
-@media screen and (min-width: 1300px) {
 }

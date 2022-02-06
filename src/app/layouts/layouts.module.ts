@@ -7,7 +7,6 @@ import { LearningDesignComponent } from './components/learning-design/learning-d
 import { SpeakingComponent } from './components/speaking/speaking.component';
 import { MediaComponent } from './components/media/media.component';
 import { FaqComponent } from './components/faq/faq.component';
-import { ContactMeComponent } from './components/contact-me/contact-me.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { TermsConditionComponent } from './components/terms-condition/terms-condition.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
@@ -18,6 +17,7 @@ import { PrivateCoachingComponent } from './components/private-coaching/private-
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SpeakingComponent,
     MediaComponent,
     FaqComponent,
-    ContactMeComponent,
+    ContactComponent,
     PrivacyPolicyComponent,
     TermsConditionComponent,
     BlogsComponent,

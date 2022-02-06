@@ -1,1 +1,35 @@
-<p>faq works!</p>
+<app-breadcrumb [title]="breadcrumbTitle"></app-breadcrumb>
+
+<section class="faq">
+  <div class="container">
+    <div class="row">
+      <div class="col-d-3 col-t-3"></div>
+      <div class="col-d-9 col-t-9">
+        <div class="info">
+          Can't find an answer?
+          <div class="details">
+            <span>Call us</span> at +1 245 688 75344 or<br>
+            <span>email at</span> info@learningpirate.com
+          </div>
+        </div>
+        <div class="accordion">
+
+          <div class="accordion-item" *ngFor="let item of faqs" (click)="toggleFaqs()">
+            <button class="accordion-btn">
+              {{ item.id }} &nbsp; &nbsp; {{ item.title }}
+              <span class="accordion-icon">
+                <i class="ri-add-line"></i>
+              </span>
+            </button>
+
+            <div class="accordion-content">
+              <div class="des" [innerHtml]="item.desc"></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

@@ -18,9 +18,10 @@ export class AppComponent {
     });
 
     $(window).on('scroll', function (e) {
-      var $el = $('.sticky');
+      var $el = $('.navbar');
       var isPositionFixed = $el.css('position') == 'fixed';
       if ($(this).scrollTop()! > 60 && !isPositionFixed) {
+        $el.addClass('sticky');
         $el.css({
           background: '#000000',
           position: 'fixed',
@@ -29,7 +30,7 @@ export class AppComponent {
         });
       }
       if ($(this).scrollTop()! < 60 && isPositionFixed) {
-        console.log(1);
+        $el.removeClass('sticky');
         $el.css({
           background: 'transparent',
           position: 'static',

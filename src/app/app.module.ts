@@ -10,6 +10,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from './shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutsModule } from './layouts/layouts.module';
+import { ContactModule } from './layouts/contact/contact.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +23,7 @@ import { LayoutsModule } from './layouts/layouts.module';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     LayoutsModule,
+    ContactModule,
     ToastrModule.forRoot({
       timeOut: 10000,
       // positionClass: 'toast-top-full-width',

@@ -89,12 +89,111 @@ span {
   background-color: var(--white);
 }
 
+.app-input-line {
+  height: 50px;
+  line-height: 40px;
+  padding: 0px 20px 0px 0px;
+  vertical-align: middle;
+  width: 100%;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--font-color);
+  margin-bottom: 15px;
+  background-color: transparent;
+  outline: none;
+  outline-style: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid #00000020 1px;
+  padding: 3px 10px;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.styled-checkbox {
+  position: absolute;
+  opacity: 0;
+
+  & + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  // Box.
+  & + label:before {
+    content: "";
+    margin-right: 20px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 23px;
+    height: 23px;
+    border: 1px solid var(--font-color);
+  }
+
+  &:hover + label:before {
+    background: var(--primary-color);
+  }
+
+  &:focus + label:before {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+  }
+
+  &:checked + label:before {
+    background: var(--primary-color);
+  }
+
+  &:disabled + label {
+    color: #b8b8b8;
+    cursor: auto;
+  }
+
+  &:disabled + label:before {
+    box-shadow: none;
+    background: #ddd;
+  }
+
+  // Checkmark. Could be replaced with an image
+  &:checked + label:after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 12px;
+    background: white;
+    width: 2px;
+    height: 2px;
+    box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white,
+      4px -6px 0 white, 4px -8px 0 white;
+    transform: rotate(45deg);
+  }
+}
+
+.cb-holder {
+  margin-top: 10px;
+}
+
 .btn {
-  padding: 15px 35px;
+  padding: 8px 35px;
   color: var(--white);
   background: var(--primary-color);
   box-shadow: 0px 4px 10px #4169e14d;
-  border-radius: 25px;
+  border-radius: 50px;
+  border: none !important;
+}
+
+.btn:hover {
+  padding: 8px 35px;
+  color: var(--white);
+  background: var(--primary-color-2);
+  box-shadow: 0px 4px 10px #4169e14d;
+  border-radius: 50px;
   border: none !important;
 }
 
@@ -102,9 +201,17 @@ span {
   padding: 5px 50px;
   box-shadow: 0px 4px 10px #7851a965;
   border: 1px solid #ffffff;
-  border-radius: 25px;
+  border-radius: 50px;
   color: var(--primary-color);
   background: transparent !important;
+}
+.btn-outline:hover {
+  padding: 5px 50px;
+  box-shadow: 0px 4px 10px #7851a965;
+  border: 1px solid var(--secondary-color);
+  border-radius: 50px;
+  color: var(--white);
+  background: var(--secondary-color);
 }
 
 .capitalize {
@@ -140,6 +247,14 @@ span {
 
 .circle-15 {
   background: #76777940 0% 0% no-repeat padding-box;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.circle-15-b {
+  background: #216ed830 0% 0% no-repeat padding-box;
   height: 15px;
   width: 15px;
   border-radius: 50%;
@@ -293,6 +408,29 @@ img {
   display: table;
 }
 
+h1 {
+  margin-top: 60px;
+  font-weight: 700;
+  color: var(--white);
+  font-size: 5.5rem;
+  letter-spacing: 0.95rem;
+}
+span {
+  color: var(--primary-color);
+}
+
+.desc p {
+  font-size: 1.1rem;
+  line-height: 1.7rem;
+  font-weight: bold;
+  margin-top: 3px;
+}
+
+.bc-title {
+  margin-top: 70px;
+  width: 50% !important;
+}
+
 /*---media start----*/
 
 /* For mobile phones: */
@@ -322,9 +460,16 @@ img {
     background: transparent !important;
   }
 
-  h2 {
+  h2,
+  h3,
+  h4 {
     font-size: 1.5rem;
     line-height: 2.1rem;
+  }
+
+  .bc-title {
+    margin-top: 40px;
+    width: 100% !important;
   }
 
   .mt-50 {
@@ -369,6 +514,7 @@ img {
   h4 {
     font-size: 1.5rem;
     line-height: 2.25rem;
+    font-weight: bold;
   }
 }
 
@@ -377,6 +523,7 @@ img {
   h3 {
     font-size: 1.5rem;
     line-height: 2.1rem;
+    font-weight: bold;
   }
   .col-t-1 {
     width: 8.33%;
@@ -421,6 +568,7 @@ img {
   h4 {
     font-size: 1.7rem;
     line-height: 2.15rem;
+    font-weight: bold;
   }
 
   .col-d-1 {
@@ -464,8 +612,9 @@ img {
 @media screen and (min-width: 1100px) and (max-width: 1299px) {
   h3,
   h4 {
-    font-size: 1.5rem;
-    line-height: 2.25rem;
+    font-size: 1.9rem;
+    line-height: 2.19rem;
+    font-weight: bold;
   }
   .mrn img {
     position: relative;
@@ -512,10 +661,14 @@ img {
 }
 
 @media screen and (min-width: 1300px) {
+  .container {
+    padding: 0px 0px;
+  }
   h3,
   h4 {
-    font-size: 1.5rem;
-    line-height: 2.25rem;
+    font-size: 2.2rem;
+    line-height: 2.9rem;
+    font-weight: bold;
   }
   .col-d-1 {
     width: 8.33%;

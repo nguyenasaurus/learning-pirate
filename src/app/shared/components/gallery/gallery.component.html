@@ -1,0 +1,29 @@
+<section id="gallery">
+  <div class="row">
+    <div class="col-d-12 col-t-12 content-wrapper">
+      <h3>Gallery</h3>
+      <div class="row">
+        <div class="col-d-2 col-t-2" *ngFor="let item of images; let i = index">
+          <div class="gallery-card">
+            <img [src]="item" alt="" (click)="openModal();currentSlide(i+1)">
+          </div>
+        </div>
+      </div>
+
+
+      <div id="imgModal" class="slide-modal">
+        <span class="close cursor" (click)="closeModal()">&times;</span>
+        <div class="slide-modal-content">
+
+          <div class="img-slides" *ngFor="let image of images; let i = index">
+            <img src="{{image}}">
+          </div>
+
+          <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
+          <a class="next" (click)="plusSlides(1)">&#10095;</a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

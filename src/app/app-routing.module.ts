@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './layouts/components/about/about.component';
 import { BlogComponent } from './layouts/components/blog/blog.component';
 import { BlogsComponent } from './layouts/components/blogs/blogs.component';
-import { ContactMeComponent } from './layouts/components/contact-me/contact-me.component';
+import { FaqComponent } from './layouts/components/faq/faq.component';
 import { HomeComponent } from './layouts/components/home/home.component';
 import { LearningDesignComponent } from './layouts/components/learning-design/learning-design.component';
 import { MembershipComponent } from './layouts/components/membership/membership.component';
@@ -12,8 +12,8 @@ import { PrivacyPolicyComponent } from './layouts/components/privacy-policy/priv
 import { PrivateCoachingComponent } from './layouts/components/private-coaching/private-coaching.component';
 import { SpeakingComponent } from './layouts/components/speaking/speaking.component';
 import { TermsConditionComponent } from './layouts/components/terms-condition/terms-condition.component';
+import { ContactComponent } from './layouts/contact/contact.component';
 import { LayoutsComponent } from './layouts/layouts.component';
-import { FaqComponent } from './shared/components/faq/faq.component';
 
 const routes: Routes = [
   {
@@ -49,10 +49,6 @@ const routes: Routes = [
         component: FaqComponent,
       },
       {
-        path: 'contact-me',
-        component: ContactMeComponent,
-      },
-      {
         path: 'private-coaching',
         component: PrivateCoachingComponent,
       },
@@ -73,6 +69,10 @@ const routes: Routes = [
         component: TermsConditionComponent,
       },
     ],
+  },
+  {
+    path: 'contact-me',
+    component: ContactComponent,
   },
 ];
 

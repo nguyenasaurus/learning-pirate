@@ -1,50 +1,64 @@
 <section id="testimonials">
   <div class="row">
-    <div class="col-d-4 col-t-5">
-      <div class="intro-cont">
-        <h3>What The Clients <span>Say!</span></h3>
-        <p>Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy Eirmod Tempor Invidunt Ut Labore
-          Et
-          Dolore Magna Aliquyam Erat, Sed Diam Voluptua. At Vero Eos Et Accusam.</p>
-        <div class="action">
-          <button class="btn-outline">Let’s Chat</button>
+    <div class="col-t-1 col-d-1">
+      <div class="space-between  parent">
+        <div class="float-bottom">
+          <div *ngFor="let item of [1, 2, 3, 4, 5, 6, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]">
+            <span *ngFor="let item of [1, 2, 3, 4]" class="circle-15-b" style="margin-right: 6px;"></span>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-d-8 col-t-7">
-      <div class="content-wrapper">
-        <div class="testimony-card">
-          <div class="row">
-            <div class="col-d-2 col-t-3">
-              <img [src]="activeTestimony.icon" alt="Avatar" class="avatar">
-            </div>
-            <div class="col-d-10 col-t-9 testimony-card-inner">
-              <p [innerHtml]="activeTestimony.testimony"></p>
-              <p class="mt-30 mmb">{{ activeTestimony.name }}</p>
-              <small>{{ activeTestimony.title }}</small>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimony-card">
-          <div class="row">
-            <div class="col-d-2">
-              <img [src]="nextTestimony.icon" alt="Avatar" class="avatar">
-            </div>
-            <div class="col-d-10 col-t-9 testimony-card-inner">
-              <p [innerHtml]="nextTestimony.testimony"></p>
-              <p class="mt-30 mmb">{{ nextTestimony.name }}</p>
-              <small>{{ nextTestimony.title }}</small>
+    <div class="col-t-11 col-d-11">
+      <div class="row">
+        <div class="col-d-4 col-t-5">
+          <div class="intro-cont">
+            <h3>What The Clients <span>Say!</span></h3>
+            <p>Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy Eirmod Tempor Invidunt Ut Labore
+              Et
+              Dolore Magna Aliquyam Erat, Sed Diam Voluptua. At Vero Eos Et Accusam.</p>
+            <div class="action">
+              <button class="btn-outline">Let’s Chat</button>
             </div>
           </div>
         </div>
-      </div>
+        <div class="col-d-8 col-t-7">
+          <div class="content-wrapper">
+            <div class="testimony-card">
+              <div class="row">
+                <div class="col-d-2 col-t-3">
+                  <img [src]="activeTestimony.icon" alt="Avatar" class="avatar">
+                </div>
+                <div class="col-d-10 col-t-9 testimony-card-inner">
+                  <p [innerHtml]="activeTestimony.testimony"></p>
+                  <p class="mt-30 mmb">{{ activeTestimony.name }}</p>
+                  <small>{{ activeTestimony.title }}</small>
+                </div>
+              </div>
+            </div>
 
-      <div class="content-wrapper">
-        <div class="slide-indicator" *ngFor="let item of testimonies"
-          [ngClass]="{'active': activeTestimony.id == item.id}"></div>
-      </div>
+            <div class="testimony-card">
+              <div class="row">
+                <div class="col-d-2">
+                  <img [src]="nextTestimony.icon" alt="Avatar" class="avatar">
+                </div>
+                <div class="col-d-10 col-t-9 testimony-card-inner">
+                  <p [innerHtml]="nextTestimony.testimony"></p>
+                  <p class="mt-30 mmb">{{ nextTestimony.name }}</p>
+                  <small>{{ nextTestimony.title }}</small>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          <div class="content-wrapper">
+            <div class="slide-indicator" *ngFor="let item of testimonies"
+              [ngClass]="{'active': activeTestimony.id == item.id}"></div>
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
+
 </section>

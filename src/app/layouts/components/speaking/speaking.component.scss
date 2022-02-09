@@ -203,3 +203,123 @@ ul li::before {
   margin: 20px 0px;
   font-weight: 600;
 }
+
+/*---media start----*/
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 595px) {
+  .t {
+    padding: 30px;
+  }
+
+  .h h4 {
+    color: var(--white);
+    width: 100%;
+  }
+
+  .quote .top {
+    padding-top: 10px;
+  }
+
+  .change-this {
+    background: #26304320;
+  }
+
+  .change-this .et-left {
+    background-color: #26304320;
+  }
+
+  .change-this .et-right {
+    padding: 40px 30px 40px 30px;
+    background-color: #26304320;
+  }
+
+  .brain-wide-shut {
+    background: #26304320;
+  }
+
+  .brain-wide-shut .et-left {
+    padding: 30px 30px 30px 30px;
+    background-color: #26304350;
+  }
+
+  .your-brain-on-learning .et-left {
+    padding: 30px 30px 30px 30px;
+    background-color: #26304330;
+  }
+
+  h3,
+  h4,
+  h5 {
+    font-size: 1.22rem;
+    line-height: 1.8rem;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media screen and (min-width: 600px) and (max-width: 799px) {
+  .t {
+    padding: 30px;
+  }
+
+  .h h4 {
+    color: var(--white);
+    width: 100%;
+  }
+
+  .quote .top {
+    padding-top: 10px;
+  }
+
+  .change-this {
+    background: #26304320;
+  }
+
+  .change-this .et-left {
+    background-color: #26304320;
+  }
+
+  .change-this .et-right {
+    padding: 40px 30px 40px 30px;
+    background-color: #26304320;
+  }
+
+  .brain-wide-shut {
+    background: #26304320;
+  }
+
+  .brain-wide-shut .et-left {
+    padding: 30px 30px 30px 30px;
+    background-color: #26304350;
+  }
+
+  .your-brain-on-learning .et-left {
+    padding: 30px 30px 30px 30px;
+    background-color: #26304330;
+  }
+
+  h3,
+  h4,
+  h5 {
+    font-size: 1.42rem;
+    line-height: 2.1rem;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1099px) {
+  .brain-wide-shut .et-left {
+    padding: 30px 30px 30px 30px;
+    background-color: #26304350;
+  }
+
+  .your-brain-on-learning .et-left {
+    padding: 30px 30px 30px 30px;
+    background-color: #26304330;
+  }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1299px) {
+}
+
+@media screen and (min-width: 1300px) {
+}

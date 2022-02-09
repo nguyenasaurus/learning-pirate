@@ -16,6 +16,7 @@ import { PodcastComponent } from './components/podcast/podcast.component';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { ConferenceComponent } from './components/conference/conference.component';
 import { LetCreateTogetherComponent } from './components/let-create-together/let-create-together.component';
+import { PartnersFilterComponent } from './components/partners-filter/partners-filter.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { LetCreateTogetherComponent } from './components/let-create-together/let
     ArticlesComponent,
     ConferenceComponent,
     LetCreateTogetherComponent,
+    PartnersFilterComponent,
   ],
   imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
   exports: [
@@ -50,6 +52,7 @@ import { LetCreateTogetherComponent } from './components/let-create-together/let
     ArticlesComponent,
     ConferenceComponent,
     LetCreateTogetherComponent,
+    PartnersFilterComponent,
   ],
 })
 export class SharedModule {}

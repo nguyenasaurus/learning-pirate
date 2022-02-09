@@ -1,0 +1,84 @@
+#partners {
+  background: #263043;
+  padding: 50px 0px 100px 0px;
+}
+
+.partner-container {
+  background: #263043;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+}
+
+h4 {
+  color: var(--white);
+}
+
+.btn-holder {
+  margin: 30px 0px 70px 0px;
+}
+
+.btn-holder .btn-outline {
+  margin: 20px 20px 0px 0px;
+  padding: 5px 50px;
+  box-shadow: 0px 4px 10px #0095e727;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  color: var(--white) !important;
+  background: transparent !important;
+}
+
+.btn-holder .btn-outline:hover {
+  border: 1px solid var(--primary-color);
+  border-radius: 50px;
+  color: var(--white);
+  background: var(--primary-color) !important;
+}
+
+.btn-holder .btn-outline.active {
+  border: 1px solid var(--primary-color);
+  border-radius: 50px;
+  color: var(--white);
+  background: var(--primary-color) !important;
+}
+
+.partner-item {
+  margin: 4px;
+  flex: 0 1 calc(20% - 8px);
+}
+
+.partner-item img {
+  height: 53px;
+  width: auto;
+}
+
+/*---media start----*/
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 595px) {
+  #partners {
+    background: #263043;
+    padding: 50px 0px;
+  }
+  .partner-item {
+    margin: 4px;
+    flex: 0 1 calc(450% - 10px);
+  }
+  .partner-item img {
+    margin-bottom: 20px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media screen and (min-width: 600px) and (max-width: 799px) {
+}
+
+@media screen and (min-width: 800px) and (max-width: 1099px) {
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1299px) {
+}
+
+@media screen and (min-width: 1300px) {
+}

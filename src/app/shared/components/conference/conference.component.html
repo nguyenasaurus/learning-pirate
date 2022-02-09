@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-d-3 col-t-3" *ngFor="let item of articles">
+    <div class="team-card">
+      <img [src]="item.icon">
+      <div class="team-card-body">
+        <p class="name">{{ item.name }}</p>
+        <p class="job-title">{{ item.title }}</p>
+      </div>
+    </div>
+  </div>
+</div>

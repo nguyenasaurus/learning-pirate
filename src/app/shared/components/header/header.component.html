@@ -1,4 +1,4 @@
-<header>
+<!-- <header>
   <div class="navbar">
     <a routerLink="/" class="logo">
       <img [src]="logo" alt="Learning Pirate" />
@@ -8,13 +8,36 @@
     <label for="nav" class="nav__open"><i></i><i></i><i></i></label>
     <div class="nav">
       <ul class="nav__items">
-        <li class="nav__item" *ngFor="let item of list">
+        <li class="nav__item" routerLinkActive="active" *ngFor="let item of list">
           <a [routerLink]="item.url" class="nav__link" routerLinkActive="active">
             {{ item.title }}
           </a>
         </li>
       </ul>
-      <button class="btn" routerLink="/membership">Join the crew</button>
+      <button class="btnn" routerLink="/membership">Join the crew</button>
     </div>
   </div>
+</header> -->
+
+<header class="header" id="navigation-menu">
+  <nav class="navbar">
+    <div class="container space-between">
+      <a routerLink="/" class="nav-logo js-anchor-link">
+        <img [src]="logo" alt="Learning Pirate" />
+      </a>
+      <ul class="nav-menu">
+        <li class="nav-item" *ngFor="let item of list">
+          <a [routerLink]="item.url" class="nav-link js-anchor-link" routerLinkActive="active">
+            {{ item.title }}
+          </a>
+        </li>
+        <button class="btnn" routerLink="/membership">Join the crew</button>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
 </header>

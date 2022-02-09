@@ -1,20 +1,22 @@
-<header>
-  <div class="navbar">
-    <a routerLink="/" class="logo">
-      <img [src]="logo" alt="Learning Pirate" />
-    </a>
-
-    <input type="checkbox" id="nav" class="hidden" hidden />
-    <label for="nav" class="nav__open"><i></i><i></i><i></i></label>
-    <div class="nav">
-      <ul class="nav__items">
-        <li class="nav__item" *ngFor="let item of list">
-          <a [routerLink]="item.url" class="nav__link" routerLinkActive="active">
+<header class="header" id="navigation-menu">
+  <nav class="navbar">
+    <div class="container space-between">
+      <a routerLink="/" class="nav-logo js-anchor-link">
+        <img [src]="logo" alt="Learning Pirate" />
+      </a>
+      <ul class="nav-menu">
+        <li class="nav-item" *ngFor="let item of list">
+          <a [routerLink]="item.url" class="nav-link js-anchor-link" routerLinkActive="active">
             {{ item.title }}
           </a>
         </li>
+        <button class="btnn" routerLink="/membership">Join the crew</button>
       </ul>
-      <button class="btn" routerLink="/membership">Join the crew</button>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
     </div>
-  </div>
+  </nav>
 </header>

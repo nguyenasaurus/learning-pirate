@@ -1,0 +1,255 @@
+#media .row {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+  height: 100vh;
+}
+.lefty {
+  background: var(--secondary-color);
+  background: url("../../../../assets/images/media-sidebar.png") center/cover
+    no-repeat;
+  padding: 70px 40px;
+}
+
+.righty {
+  background: var(--scaffold-background-color);
+  padding: 185px 110px 60px 40px;
+}
+
+.righty .intro {
+  position: relative;
+  width: 95%;
+  margin-bottom: 30px;
+  border-bottom: 0.7px solid #b8bacf;
+}
+
+.righty .intro::after {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 2px;
+  bottom: 0;
+  border-bottom: 1px solid #7851a9;
+}
+
+.righty .intro h2 {
+  font-size: 2.66rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.righty .intro .description {
+  width: 70%;
+}
+
+.righty .form-area {
+  margin-top: 30px;
+}
+
+.righty .form-area .desc {
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.righty .form-area .btn-holder {
+  margin-top: 40px;
+}
+
+.righty .form-area-left {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  padding-right: 50px;
+}
+
+.follow-us {
+  margin-top: 120px;
+}
+.follow-us .h {
+  font-weight: 500;
+  color: var(--secondary-color);
+}
+.follow-us .d {
+  font-weight: 400;
+  color: var(--font-color);
+  font-size: 0.6rem;
+}
+.follow-us .dd {
+  font-weight: 500;
+  color: var(--secondary-color);
+  font-size: 0.8rem;
+}
+
+.team-card {
+  border-radius: 15px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  background: #fff;
+  transition: 1s;
+  animation: fadeIn 3s;
+  z-index: 1;
+}
+
+.team-card .team-card-body {
+  text-align: left !important;
+  padding: 10px;
+}
+
+.team-card .team-card-body .name {
+  font-size: 1.16rem;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.team-card .team-card-body .job-title {
+  font-size: 0.6rem;
+  font-weight: 400;
+  margin-bottom: 0px;
+}
+
+.team-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.side-menu {
+  align-items: center;
+  margin-top: 100px;
+  padding: 30px 80px;
+}
+
+.media-side-btn {
+  padding: 15px 35px;
+  color: var(--white);
+  background: transparent;
+  border-radius: 50px;
+  border: none !important;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.media-side-btn:hover {
+  padding: 15px 35px;
+  color: var(--white);
+  background: var(--primary-color);
+  box-shadow: 0px 4px 10px #4169e14d;
+  border-radius: 50px;
+  border: none !important;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.active {
+  padding: 15px 35px;
+  color: var(--white);
+  background: var(--primary-color);
+  box-shadow: 0px 4px 10px #4169e14d;
+  border-radius: 50px;
+  border: none !important;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 595px) {
+  .form .row .col-d-8,
+  .form .row .col-t-4 {
+    width: 100%;
+  }
+
+  .follow-us .row .col-d-4,
+  .follow-us .row .col-t-4 {
+    width: 100%;
+  }
+
+  .righty {
+    background: var(--scaffold-background-color);
+    padding: 85px 30px 20px 20px;
+  }
+
+  .righty .intro {
+    position: relative;
+    width: 95%;
+    margin-bottom: 30px;
+    border-bottom: 0.7px solid #b8bacf;
+  }
+
+  .righty .intro h2 {
+    font-size: 2.16rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .righty .intro .description {
+    width: 100%;
+  }
+
+  .side-menu-2 {
+    margin-top: 200px;
+    padding: 30px 40px;
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1099px) {
+  .righty {
+    background: var(--scaffold-background-color);
+    padding: 85px 40px 30px 20px;
+  }
+
+  .media-side-btn,
+  .media-side-btn:active,
+  .media-side-btn:hover {
+    font-size: 12px;
+    padding: 7px 15px;
+  }
+  .side-menu {
+    margin-top: 100px;
+    padding: 30px 40px;
+  }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1299px) {
+  .media-side-btn,
+  .media-side-btn:active,
+  .media-side-btn:hover {
+    font-size: 12px;
+    padding: 7px 15px;
+  }
+  .side-menu {
+    margin-top: 100px;
+    padding: 30px 60px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .form .row .col-d-8,
+  .form .row .col-t-4 {
+    width: 100%;
+  }
+
+  .follow-us .row .col-d-4,
+  .follow-us .row .col-t-4 {
+    width: 100%;
+  }
+
+  .righty {
+    background: var(--scaffold-background-color);
+    padding: 185px 30px 20px 20px;
+  }
+
+  .righty .intro {
+    position: relative;
+    width: 95%;
+    margin-bottom: 30px;
+    border-bottom: 0.7px solid #b8bacf;
+  }
+
+  .media-side-btn,
+  .media-side-btn:active,
+  .media-side-btn:hover {
+    font-size: 12px;
+    padding: 7px 20px;
+  }
+}

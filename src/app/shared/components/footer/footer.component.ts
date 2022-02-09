@@ -8,15 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
   socials = [
     {
-      icon: '../../../../assets/images/twitter.svg',
-      url: 'https://twitter.com',
+      icon: '../../../../assets/images/twitter 2.svg',
+      url: 'https://twitter2.com',
     },
     {
-      icon: '../../../../assets/images/instagram.svg',
+      icon: '../../../../assets/images/instagram 2.svg',
       url: 'https://instagram.com',
     },
     {
-      icon: '../../../../assets/images/linkedin.svg',
+      icon: '../../../../assets/images/linkedin 2.svg',
       url: 'https://linkedin.com',
     },
   ];

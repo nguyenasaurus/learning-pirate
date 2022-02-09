@@ -40,14 +40,28 @@ export class AppComponent {
     });
 
     $(function () {
-      // Back to top
-      $('.go-top').on('click', function () {
-        $('html, body').animate(
-          {
-            scrollTop: '0',
-          },
-          1200
-        );
+      // // Back to top
+      // $('.go-top').on('click', function () {
+      //   $('html, body').animate(
+      //     {
+      //       scrollTop: '0',
+      //     },
+      //     1200
+      //   );
+      // });
+
+      var $hamburger = $('.hamburger');
+      var $navMenu = $('.nav-menu');
+      var $navLink = $('.nav-link');
+
+      $hamburger.on('click', () => {
+        $hamburger.toggleClass('active');
+        $navMenu.toggleClass('active');
+      });
+
+      $navLink.on('click', () => {
+        $hamburger.removeClass('active');
+        $navMenu.removeClass('active');
       });
     });
   }

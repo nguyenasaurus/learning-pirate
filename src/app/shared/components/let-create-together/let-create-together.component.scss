@@ -1,0 +1,83 @@
+.btn-holder {
+  margin: 20px 0px 40px 0px;
+}
+.btn-holder button i {
+  margin-left: 30px;
+}
+
+.lets-create {
+  background: url("../../../../assets/images/about/Mask\ Group\ 14.png")
+    center/cover no-repeat;
+  padding: 50px 0px;
+  text-align: center !important;
+}
+
+.lets-create p {
+  color: #00000050;
+}
+
+.lets-create .btn-holder {
+  margin-top: 33px;
+}
+
+// Media
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 595px) {
+  .lets-create {
+    background: var(--scaffold-background-color);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-size: auto;
+    background-size: cover;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    padding: 50px 0px;
+    text-align: center !important;
+  }
+
+  h3,
+  h4,
+  h5 {
+    font-size: 1.22rem;
+    line-height: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 799px) {
+  h3,
+  h4 {
+    font-size: 1.52rem;
+    line-height: 2.4rem;
+  }
+
+  .my-qualifications h5 {
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    font-weight: bold;
+  }
+
+  .lets-create {
+    background: url("../../../../assets/images/about/Mask\ Group\ 14.png")
+      center/cover no-repeat;
+    padding: 50px 0px;
+    text-align: center !important;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1099px) {
+  h3,
+  h4 {
+    font-size: 1.92rem;
+    line-height: 2.5rem;
+  }
+
+  .lets-create {
+    background: url("../../../../assets/images/about/Mask\ Group\ 14.png")
+      center/cover no-repeat;
+    padding: 50px 0px;
+    text-align: center !important;
+  }
+}

@@ -1,0 +1,69 @@
+.learning-design {
+  background: url("../../../../assets/images/learning-design.png") center/cover
+    no-repeat;
+}
+
+.speech {
+  margin: 50px 0px 0px 0px;
+}
+
+.speech p {
+  font-size: 1.56rem !important;
+}
+
+.speech .quote i {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #26304330;
+}
+
+.name {
+  font-weight: 600;
+  margin-bottom: 100px;
+}
+
+.name small {
+  font-weight: 400;
+}
+
+.learning-design-process {
+  background: var(--secondary-color);
+  background: url("../../../../assets/images/tldp.png") center/cover no-repeat;
+  padding: 50px 0px;
+}
+
+.h h4 {
+  color: var(--white);
+  width: 300px;
+}
+
+.d {
+  margin: 10px 0px 30px 0;
+  color: #ffffff90;
+}
+
+.btn-holder {
+  margin-bottom: 40px;
+}
+
+.process-card {
+  margin-top: 30px;
+  padding: 25px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.15);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.process-card .t {
+  font-size: 1.95rem;
+  color: var(--white);
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.process-card .d {
+  color: #ffffff90;
+  font-weight: 400;
+  margin-bottom: 15px;
+}

@@ -11,7 +11,6 @@ import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-poli
 import { TermsConditionComponent } from './components/terms-condition/terms-condition.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
 import { BlogComponent } from './components/blog/blog.component';
-import { PodcastComponent } from './components/podcast/podcast.component';
 import { MembershipComponent } from './components/membership/membership.component';
 import { PrivateCoachingComponent } from './components/private-coaching/private-coaching.component';
 import { RouterModule } from '@angular/router';
@@ -33,7 +32,6 @@ import { ContactComponent } from './contact/contact.component';
     TermsConditionComponent,
     BlogsComponent,
     BlogComponent,
-    PodcastComponent,
     MembershipComponent,
     PrivateCoachingComponent,
   ],

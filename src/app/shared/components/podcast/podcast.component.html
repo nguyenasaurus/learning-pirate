@@ -1,0 +1,30 @@
+<div class="row play-card" *ngFor="let item of podcasts">
+  <div class="col-d-6 col-t-6">
+    <div class="row">
+      <div class="col-d-2 col-t-2">
+        <div class="pp-holder">
+          <button class="play-pause" (click)="playPause()" [ngClass]="{'paused': play}"></button>
+        </div>
+      </div>
+      <div class="col-d-2 col-t-2">
+
+        <div class="album">
+          <img [src]="item.icon">
+          <img [src]="item.icon" class="content">
+        </div>
+
+      </div>
+      <div class="col-d-8 col-t-8 info">
+        <p class="file-title">{{ item.title }}</p>
+        <small class="file-desc">{{ item.subtitle }}</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-d-4 col-t-4">
+    <p class="file-title">{{ item.author }}</p>
+    <small class="file-desc">{{ item.duration}}</small>
+  </div>
+  <div class="col-d-2 col-t-2">
+    <p class="file-title">{{ item.date }}</p>
+  </div>
+</div>

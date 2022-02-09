@@ -1,1 +1,21 @@
-<p>media works!</p>
+<app-header-two></app-header-two>
+
+<section id="media">
+  <div class="row">
+    <div class="col-d-3 col-t-3 lefty">
+      <div class="side-menu">
+        <button class="media-side-btn active" *ngFor="let item of menu" (click)="changeMedia(item)"
+          [ngClass]="{'active': item.id == activeMenuId }">
+          {{ item.title }}
+        </button>
+      </div>
+    </div>
+    <div class="col-d-9 col-t-9 righty">
+      <app-conference *ngIf="activeMenuId == 3"></app-conference>
+
+      <app-podcast *ngIf="activeMenuId == 2"></app-podcast>
+
+      <app-articles *ngIf="activeMenuId == 1"></app-articles>
+    </div>
+  </div>
+</section>

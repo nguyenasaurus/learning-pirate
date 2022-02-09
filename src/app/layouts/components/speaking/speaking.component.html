@@ -1,1 +1,164 @@
-<p>speaking works!</p>
+<app-breadcrumb [title]="breadcrumbTitle"></app-breadcrumb>
+
+<section class="speaking">
+  <div class="container">
+    <div class="row">
+      <div class="col-d-5 col-t-5">
+        <div class="t">
+          <h3>Give your audience a <span>head start</span></h3>
+        </div>
+        <div class="d">
+          <p>Imagine having a speaker who could take your audience into their brains and back out into a world of
+            curiosity and possibility.</p>
+          <p>Demonstrate and share ways that they can optimize the resources of their brains to get the most out of your
+            kickoffs, annual meetings, conferences or special events. Lauren shares how to apply the science of learning
+            through stories, live experiments, humor, and practical application</p>
+          <p>She creates a conversational
+            experience with her audience and guides them to recognize the feelings and sensations of their brains at
+            work. It is what makes her sessions truly unique and your attendee’s overall experiences more valuable.</p>
+        </div>
+
+        <div class="btn-holder">
+          <button class="btn">
+            Are you really ready? <i class="ml-30">&rarr;</i>
+          </button>
+        </div>
+
+      </div>
+      <div class="col-d-7 col-t-7"></div>
+    </div>
+  </div>
+</section>
+
+<section class="learning-design-process">
+  <div class="container">
+    <div class="h">
+      <h4>Conference <span>Testimonials</span></h4>
+    </div>
+
+    <div class="row">
+      <div class="col-d-4 col-t-4" *ngFor="let item of testimonials">
+        <div class="quote">
+          <div class="top">
+            <i class="ri-double-quotes-l"></i>
+          </div>
+        </div>
+        <div class="testimony-card">
+          <div class="d" [innerHtml]="item.desc"></div>
+          <div class="i">
+            <small class="uppercase">{{ item.event }}</small>
+            <div>
+              <img [src]="item.icon" alt="">
+              <span class="t">{{ item.title }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="space-between">
+          <p>&nbsp;</p>
+          <div class="quote">
+            <div class="bottom">
+              <i class="ri-double-quotes-r bottom"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="experienced-talks">
+  <div class="container">
+    <div class="row">
+      <div class="col-d-12 col-t-12 t">
+        <h4>Experienced <span>Talks</span></h4>
+      </div>
+    </div>
+  </div>
+  <div class="row change-this">
+    <div class="col-d-6 col-t-6 et-left"></div>
+    <div class="col-d-6 col-t-6 et-right">
+      <h4>Change This? Unlearn That!</h4>
+      <div class="d">
+        <p>Sometimes the hardest thing about change isn't learning something new, but unlearning the old skills and
+          behaviors required to change. So how do you do it?</p>
+        <p>Get ready to participate in some live experiments that will give you a chance to experience and feel your
+          brain at work in the moment its happening. We'll answer questions like “What is automatic processing?” “How
+          are my emotions and memories involved in unlearning and change?” and what can I do now to implement unlearning
+          in my change plan.</p>
+      </div>
+
+      <div class="audience">
+        <h5>Audiences will:</h5>
+        <ul>
+          <li *ngFor="let item of audiences">{{ item }}</li>
+        </ul>
+      </div>
+
+      <div class="btn-holder">
+        <button class="btn">Book this talk</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row brain-wide-shut">
+    <div class="col-d-6 col-t-6 et-left">
+      <h4>Brain Wide Shut</h4>
+      <div class="desc">
+        Did anyone ever teach you HOW to learn? How did we form our beliefs, skills, and behaviors around learning? and
+        what can we do to evolve?
+      </div>
+      <div class="d">
+        <p>In another one of Lauren's trademark experimental talks, be prepared to be taken on a journey through the
+          classrooms of the past and discover how and why we formed our outdated beliefs and behaviors around learning.
+        </p>
+        <p>Explore the fascination we've had with our brains for centuries, how neuroscience evolved and the practical
+          applications that you can start using in your learning and everyday lives. Then get ready to go into the brain
+          to see what's really going on in there when you learn and activate it by participating in live experiments,
+          because why listen when you can feel!?</p>
+      </div>
+
+      <div class="audience">
+        <h5>Audiences will discover:</h5>
+        <ul>
+          <li *ngFor="let item of audienceDiscover">{{ item }}</li>
+        </ul>
+      </div>
+
+      <div class="btn-holder">
+        <button class="btn">Book this talk</button>
+      </div>
+    </div>
+    <div class="col-d-6 col-t-6 et-right"></div>
+  </div>
+
+  <div class="row your-brain-on-learning">
+    <div class="col-d-6 col-t-6 et-left">
+      <h4>Your Brain On Learning</h4>
+      <div class="desc">
+        One of the primary jobs of the brain is to learn, but how does it do it?
+      </div>
+      <div class="d">
+        <p>And how do we use this knowledge to create long-lasting learning? For centuries we'’'ve been learning the
+          same way with little thought as to how the brain (you know the thing that'’'s doing the learning) encodes,
+          stores, and retrieves information.</p>
+      </div>
+
+      <div class="audience">
+        <h5>In this highly interactive session audiences will:</h5>
+        <ul>
+          <li *ngFor="let item of interactive">{{ item }}</li>
+        </ul>
+      </div>
+
+      <div class="btn-holder">
+        <button class="btn">Learn about Your brain on Learning</button>
+      </div>
+    </div>
+    <div class="col-d-6 col-t-6 et-right"></div>
+  </div>
+
+</section>
+
+<app-partners></app-partners>
+
+<app-let-create-together></app-let-create-together>

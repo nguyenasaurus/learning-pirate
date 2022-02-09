@@ -1,0 +1,205 @@
+.speaking {
+  background: url("../../../../assets/images/speaking/speaking.png")
+    center/cover no-repeat;
+  padding: 50px 0px;
+}
+
+.t {
+  margin: 10px 0px 0px 0px;
+}
+
+.d p {
+  color: var(--font-color);
+}
+
+.speech .quote i {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #26304330;
+}
+
+.name {
+  font-weight: 600;
+  margin-bottom: 100px;
+}
+
+.name small {
+  font-weight: 400;
+}
+
+.learning-design-process {
+  background: var(--secondary-color);
+  background: url("../../../../assets/images/tldp.png") center/cover no-repeat;
+  padding: 50px 0px;
+}
+
+.h h4 {
+  color: var(--white);
+  width: 40%;
+}
+
+.d {
+  margin: 10px 0px 30px 0;
+  color: #ffffff90;
+}
+
+.btn-holder {
+  margin-bottom: 40px;
+}
+
+.quote i {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+.quote .top {
+  padding-top: 50px;
+}
+.quote .bottom {
+  margin-bottom: 50px;
+}
+
+.testimony-card {
+  margin: -30px 0px;
+  padding: 25px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.15);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.testimony-card .i {
+  margin-top: 20px;
+}
+
+.testimony-card .d {
+  height: 160px;
+}
+
+.testimony-card .i p {
+  color: var(--white);
+}
+
+.testimony-card .i small {
+  text-transform: uppercase;
+  color: #ffffff90;
+}
+
+.testimony-card .i img {
+  height: 63px;
+  width: auto;
+}
+
+.testimony-card .i .t {
+  color: var(--white);
+  margin-left: 10px;
+  display: inline-block;
+  width: 150px;
+  top: 11px;
+  position: relative;
+}
+
+.testimony-card .d {
+  color: #ffffff90;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.t {
+  padding: 40px 0px;
+}
+
+.change-this {
+  background: url("../../../../assets/images/speaking/changethis.png")
+    center/cover no-repeat;
+}
+
+.change-this .et-left {
+  background-color: #26304320;
+}
+
+.change-this .et-right {
+  padding: 40px 170px 40px 0px;
+  background-color: #26304320;
+}
+
+.change-this .et-right .audience {
+  margin-top: 30px;
+}
+
+ul {
+  list-style: none;
+  margin-left: 25px;
+  margin-bottom: 10px;
+}
+
+ul li {
+  color: #00000090;
+}
+
+ul li::before {
+  content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #7851a9;
+  font-weight: bold;
+  display: inline-block;
+  width: 1.5rem;
+  margin-left: -1.5rem;
+}
+
+.change-this .et-right .btn-holder {
+  margin: 40px 0px 40px 0px;
+}
+
+.brain-wide-shut {
+  background-color: #26304320;
+}
+
+.brain-wide-shut .et-right {
+  background: url("../../../../assets/images/speaking/brainwideshut.png")
+    center/cover no-repeat;
+}
+
+.brain-wide-shut .et-left {
+  padding: 40px 80px 40px 160px;
+  background-color: #26304320;
+}
+
+.brain-wide-shut .et-right .audience {
+  margin-top: 30px;
+}
+
+.brain-wide-shut .et-left .btn-holder {
+  margin: 40px 0px 40px 0px;
+}
+
+.brain-wide-shut .et-left .desc {
+  margin: 20px 0px;
+  font-weight: 600;
+}
+
+.your-brain-on-learning {
+  background-color: #26304320;
+}
+
+.your-brain-on-learning .et-right {
+  background: url("../../../../assets/images/speaking/yourbrain.png")
+    center/cover no-repeat;
+}
+
+.your-brain-on-learning .et-left {
+  padding: 40px 80px 40px 160px;
+  background-color: #26304340;
+}
+
+.your-brain-on-learning .et-right .audience {
+  margin-top: 30px;
+}
+
+.your-brain-on-learning .et-left .btn-holder {
+  margin: 40px 0px 40px 0px;
+}
+
+.your-brain-on-learning .et-left .desc {
+  margin: 20px 0px;
+  font-weight: 600;
+}

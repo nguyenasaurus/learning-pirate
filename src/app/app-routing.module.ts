@@ -6,8 +6,8 @@ import { BlogsComponent } from './layouts/components/blogs/blogs.component';
 import { FaqComponent } from './layouts/components/faq/faq.component';
 import { HomeComponent } from './layouts/components/home/home.component';
 import { LearningDesignComponent } from './layouts/components/learning-design/learning-design.component';
+import { MediaComponent } from './layouts/components/media/media.component';
 import { MembershipComponent } from './layouts/components/membership/membership.component';
-import { PodcastComponent } from './layouts/components/podcast/podcast.component';
 import { PrivacyPolicyComponent } from './layouts/components/privacy-policy/privacy-policy.component';
 import { PrivateCoachingComponent } from './layouts/components/private-coaching/private-coaching.component';
 import { SpeakingComponent } from './layouts/components/speaking/speaking.component';
@@ -37,10 +37,6 @@ const routes: Routes = [
         component: SpeakingComponent,
       },
       {
-        path: 'media',
-        component: BlogsComponent,
-      },
-      {
         path: 'media/content/:id',
         component: BlogComponent,
       },
@@ -57,10 +53,6 @@ const routes: Routes = [
         component: MembershipComponent,
       },
       {
-        path: 'podcast',
-        component: PodcastComponent,
-      },
-      {
         path: 'privacy-policy',
         component: PrivacyPolicyComponent,
       },
@@ -69,6 +61,10 @@ const routes: Routes = [
         component: TermsConditionComponent,
       },
     ],
+  },
+  {
+    path: 'media',
+    component: MediaComponent,
   },
   {
     path: 'contact-me',

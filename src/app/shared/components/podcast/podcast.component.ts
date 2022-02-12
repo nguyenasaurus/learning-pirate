@@ -11,31 +11,40 @@ import { AudioService } from 'src/app/services/audio.service';
 export class PodcastComponent implements OnInit {
   podcasts = [
     {
-      title: 'The Days of Change:',
+      title: 'Come my way',
+      subtitle: 'Episode 02: Making waves in the industry',
+      author: 'TJ Wow Seminar',
+      duration: '05:20',
+      date: '03 Sept. 2021',
+      icon: '../../../../assets/images/podcast/Rectangle 174-6.png',
+      url: 'https://naijaloaded.store/wp-content/uploads/2021/10/Wande-Coal-Come-My-Way.mp3',
+    },
+    {
+      title: 'The Days of Change',
       subtitle: 'Episode 02: Making waves in the industry',
       author: 'TJ Wow Seminar',
       duration: '05:20',
       date: '03 Sept. 2021',
       icon: '../../../../assets/images/podcast/Rectangle 174.png',
-      url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+      url: 'https://naijaloaded.store/wp-content/uploads/2022/02/Reekado-Banks-Ft.-Fireboy-DML-%E2%80%93-Ozumba-Mbadiwe-Remix.mp3',
     },
     {
-      title: 'CanvassHR:',
+      title: 'CanvassHR',
       subtitle: 'Episode 02: Making waves in the industry',
       author: 'TJ Wow Seminar',
       duration: '05:20',
       date: '03 Sept. 2021',
       icon: '../../../../assets/images/podcast/Rectangle 174-1.png',
-      url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3',
+      url: 'https://naijaloaded.store/wp-content/uploads/2022/01/2Baba-Smile.mp3',
     },
     {
-      title: 'Uncancelled and Unplugged:',
+      title: 'Uncancelled and Unplugged',
       subtitle: 'Episode 02: Making waves in the industry',
       author: 'TJ Wow Seminar',
       duration: '05:20',
       date: '03 Sept. 2021',
       icon: '../../../../assets/images/podcast/Rectangle 174-2.png',
-      url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3',
+      url: 'https://naijaloaded.store/wp-content/uploads/2022/01/DJ-YK-Beats-Warisi-Cruise-Beat.mp3',
     },
     {
       title: 'One Degree Shift: Spotify',
@@ -44,7 +53,7 @@ export class PodcastComponent implements OnInit {
       duration: '05:20',
       date: '03 Sept. 2021',
       icon: '../../../../assets/images/podcast/Rectangle 174-3.png',
-      url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+      url: 'https://naijaloaded.store/wp-content/uploads/2022/01/T.I-Blaze-Ft.-Olamide-Sometimes-Remix.mp3',
     },
     {
       title: 'One Degree Shift: Apple Music',
@@ -53,37 +62,27 @@ export class PodcastComponent implements OnInit {
       duration: '05:20',
       date: '03 Sept. 2021',
       icon: '../../../../assets/images/podcast/Rectangle 174-4.png',
-      url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3',
+      url: 'https://naijaloaded.store/wp-content/uploads/2021/12/Burna-Boy-Ft.-Wizkid-Ballon-Dor.mp3',
     },
     {
-      title: 'The Catalyst:',
+      title: 'The Catalyst',
       subtitle: 'Episode 02: Making waves in the industry',
       author: 'TJ Wow Seminar',
       duration: '05:20',
       date: '03 Sept. 2021',
       icon: '../../../../assets/images/podcast/Rectangle 174-5.png',
-      url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3',
+      url: 'https://naijaloaded.store/wp-content/uploads/2022/01/Skiibii-Ft.-Davido-Baddest-Boy-Remix.mp3',
     },
     {
-      title: 'The Days of Change:',
+      title: 'The Days of Change',
       subtitle: 'Episode 02: Making waves in the industry',
       author: 'TJ Wow Seminar',
       duration: '05:20',
       date: '03 Sept. 2021',
       icon: '../../../../assets/images/podcast/Rectangle 174-6.png',
-      url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3',
+      url: 'https://naijaloaded.store/wp-content/uploads/2021/10/Wande-Coal-Come-My-Way.mp3',
     },
   ];
-
-  nowPlaying = {
-    title: 'The Days of Change:',
-    subtitle: 'Episode 02: Making waves in the industry',
-    author: 'TJ Wow Seminar',
-    duration: '05:20',
-    date: '03 Sept. 2021',
-    icon: '../../../../assets/images/podcast/Rectangle 174.png',
-    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
-  };
 
   currentIndex: any;
   state!: StreamState;
@@ -92,6 +91,10 @@ export class PodcastComponent implements OnInit {
   value: number = 0;
   currentHms = '00:00:00';
   destinationHms = '00:00:00';
+
+  repeatThis = false;
+  stopThis = false;
+  shuffleThis = false;
 
   constructor(private audioService: AudioService) {
     // listen to stream state
@@ -124,6 +127,22 @@ export class PodcastComponent implements OnInit {
 
     let val = Math.round((cSeconds / dSeconds) * 100);
     this.value = val;
+
+    // if (this.value > 99 && this.repeatThis) {
+    //   console.log('R');
+
+    //   console.log(this.value);
+    //   this.audioService.stop();
+    //   this.playStream(this.currentFile.file.url);
+    // } else if (this.value > 100 && !this.repeatThis) {
+    //   console.log('N');
+
+    //   this.next();
+    // } else if (this.shuffleThis) {
+    //   console.log('S');
+
+    //   this.shuffle();
+    // }
   }
 
   playStream(url: any) {
@@ -133,9 +152,15 @@ export class PodcastComponent implements OnInit {
   }
 
   openFile(file: any, index: any) {
-    this.currentIndex = index;
+    let chosenFile;
+    if (this.repeatThis) {
+      chosenFile = this.currentFile.file;
+    } else {
+      chosenFile = file;
+      this.currentIndex = index;
 
-    this.currentFile = { index, file };
+      this.currentFile = { index, file };
+    }
     this.audioService.stop();
     this.playStream(file.url);
   }
@@ -146,11 +171,13 @@ export class PodcastComponent implements OnInit {
   }
 
   play(index: any) {
+    this.stopThis = false;
     this.audioService.play();
     this.currentIndex = index;
   }
 
   stop() {
+    this.stopThis = true;
     this.audioService.stop();
   }
 
@@ -174,10 +201,11 @@ export class PodcastComponent implements OnInit {
     return this.currentFile.index === this.podcasts.length - 1;
   }
 
-  togglePlay() {
-    $('.play-pause').on('click', function () {
-      $('.play-pause').removeClass('active');
-      $(this).addClass('active');
-    });
+  shuffle() {
+    this.shuffleThis = true;
+    let newIndex = Math.floor(Math.random() * this.podcasts.length);
+    let chosen = this.podcasts[newIndex];
+
+    this.openFile(chosen, newIndex);
   }
 }

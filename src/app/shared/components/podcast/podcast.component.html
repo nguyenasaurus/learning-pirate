@@ -34,9 +34,6 @@
   <div class="row player">
 
     <div class="actions">
-      <button class="music-btn-b">
-        <i class="ri-shuffle-line"></i>
-      </button>
       <button class="music-btn" [disabled]="isFirstPlaying()" (click)="previous()">
         <i class="ri-rewind-fill"></i>
       </button>
@@ -49,19 +46,20 @@
       <button class="music-btn" [disabled]="isLastPlaying()" (click)="next()">
         <i class="ri-speed-fill"></i>
       </button>
-      <button class="music-btn-b">
-        <i class="ri-repeat-one-line"></i>
-      </button>
+
       <div class="volume">
         <button class="music-btn">
-          <i class="ri-volume-mute-line"></i>
+          {{ currentFile.file.date }}
         </button>
-        <button class="music-btn">
-          <i class="ri-volume-down-line"></i>
+        <!-- <button class="music-btn" (click)="stop()">
+          <i class="ri-stop-line" [ngClass]="{'primary-color': stopThis}"></i>
         </button>
-        <button class="music-btn">
-          <i class="ri-volume-up-line" *ngIf="currentFile.index === currentIndex && !state?.error"></i>
-        </button>
+        <button class="music-btn" (click)="shuffle()">
+          <i class="ri-shuffle-line" [ngClass]="{'primary-color': shuffleThis}"></i>
+        </button> -->
+        <!-- <button class="music-btn" (click)="repeatThis = !repeatThis">
+          <i class="ri-repeat-one-line" [ngClass]="{'primary-color': repeatThis}"></i>
+        </button> -->
       </div>
     </div>
 

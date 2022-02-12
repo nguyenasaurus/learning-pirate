@@ -80,7 +80,7 @@ export class AudioService {
   }
 
   stop() {
-    this.stop$;
+    // this.stop$;
     // this.stop$.next();
   }
 

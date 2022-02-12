@@ -41,8 +41,7 @@
 }
 
 .banner-content {
-  margin-top: 100px;
-  // padding-top: 50px;
+  margin: 100px 0px 50px 0px;
 }
 .banner-content h2 {
   color: var(--white);
@@ -51,14 +50,17 @@
 }
 
 .banner-content h2 span {
-  color: var(--primary-color);
+  color: var(--primary-color-2);
   font-weight: bold;
   font-family: var(--font-family);
 }
 .banner-content p {
   color: var(--white) !important;
   font-family: var(--font-family);
+  font-size: 15px;
+  line-height: 22.5px;
   padding-right: 70px;
+  margin-top: 15px;
 }
 
 .banner-base {
@@ -187,23 +189,21 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 749px;
-  min-height: 748px;
 }
 
 .mrn {
-  min-height: 747px;
   position: relative;
+  padding-top: 10px;
 }
 .mrn img {
   position: relative;
-  height: 660px;
+  height: 550px;
   width: auto;
   bottom: 0;
 }
 
 .mm-content {
-  padding: 70px 40px 20px 0px;
+  padding: 60px 40px 20px 0px;
 }
 
 .mm-content h3 {
@@ -212,7 +212,7 @@
 }
 
 .mm-content h3 span {
-  color: var(--primary-color);
+  color: var(--primary-color-2);
   text-align: left;
   font-weight: bold;
 }
@@ -224,10 +224,10 @@
 }
 
 .mm-content .desc-one {
-  font-size: 1.56rem;
-  line-height: 2.2rem;
+  font-size: 1.26rem;
+  line-height: 1.8rem;
   font-weight: bold;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .mm-content .desc-two {
@@ -236,7 +236,7 @@
 }
 
 .mm-content .btn-holder {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 #helper {
@@ -261,7 +261,7 @@
   font-size: 33px;
   line-height: 55px;
   font-weight: bold;
-  color: var(--primary-color);
+  color: var(--primary-color-2);
 }
 
 .desc p {
@@ -273,14 +273,18 @@
   margin-top: 30px;
 }
 .help-card h4 {
-  font-size: 25px;
-  line-height: 35px;
+  font-size: 18px;
+  line-height: 27px;
   color: var(--white);
 }
 .help-card p {
-  font-size: 15px;
-  line-height: 30px;
+  font-size: 13px;
+  line-height: 19.5px;
   color: var(--white-50);
+}
+
+.ic img {
+  height: 25px;
 }
 
 .follow-me {

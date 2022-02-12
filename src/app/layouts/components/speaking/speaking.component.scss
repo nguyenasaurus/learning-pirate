@@ -1,7 +1,7 @@
 .speaking {
   background: url("../../../../assets/images/speaking/speaking.png")
     center/cover no-repeat;
-  padding: 50px 0px;
+  padding: 70px 0px 50px 0px;
 }
 
 .t {
@@ -10,12 +10,17 @@
 
 .d p {
   color: var(--font-color);
+  color: var(--secondary-color);
 }
 
 .speech .quote i {
   font-size: 4rem;
   font-weight: bold;
   color: #26304330;
+}
+
+.tt {
+  padding: 30px 0px;
 }
 
 .name {
@@ -30,7 +35,7 @@
 .learning-design-process {
   background: var(--secondary-color);
   background: url("../../../../assets/images/tldp.png") center/cover no-repeat;
-  padding: 50px 0px;
+  padding: 20px 0px;
 }
 
 .h h4 {
@@ -40,7 +45,6 @@
 
 .d {
   margin: 10px 0px 30px 0;
-  color: #ffffff90;
 }
 
 .btn-holder {
@@ -50,10 +54,10 @@
 .quote i {
   font-size: 2rem;
   font-weight: bold;
-  color: var(--primary-color);
+  color: var(--primary-color-2);
 }
 .quote .top {
-  padding-top: 50px;
+  padding-top: 20px;
 }
 .quote .bottom {
   margin-bottom: 50px;
@@ -61,19 +65,24 @@
 
 .testimony-card {
   margin: -30px 0px;
-  padding: 25px;
+  padding: 20px;
+  background: #24242490 0% 0% no-repeat padding-box;
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.15);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 3;
 }
 
 .testimony-card .i {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .testimony-card .d {
-  height: 160px;
+  height: 140px;
+}
+
+.testimony-card .d p {
+  color: var(--white) !important;
 }
 
 .testimony-card .i p {
@@ -93,20 +102,26 @@
 .testimony-card .i .t {
   color: var(--white);
   margin-left: 10px;
-  display: inline-block;
   width: 150px;
-  top: 11px;
-  position: relative;
+  display: inline-block;
+}
+
+.row-g {
+  display: grid;
+  grid-template-columns: 18% auto;
+}
+
+.im {
+  overflow: hidden;
+}
+.im img {
+  width: 100%;
 }
 
 .testimony-card .d {
   color: #ffffff90;
   font-weight: 400;
   margin-bottom: 15px;
-}
-
-.t {
-  padding: 40px 0px;
 }
 
 .change-this {
@@ -215,6 +230,10 @@ ul li::before {
   .h h4 {
     color: var(--white);
     width: 100%;
+  }
+
+  .quote {
+    z-index: 4;
   }
 
   .quote .top {

@@ -22,19 +22,23 @@ header .navbar.sticky .logo img {
   margin-left: 40px;
   padding: 1px 35px;
   color: var(--white);
-  background: var(--primary-color);
+  background: var(--primary-color-2);
   box-shadow: 0px 4px 10px #4169e14d;
   border-radius: 25px;
   border: none !important;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
 }
 
 .btnn {
   padding: 8px 35px;
   color: var(--white);
-  background: var(--primary-color);
+  background: var(--primary-color-2);
   box-shadow: 0px 4px 10px #4169e14d;
   border-radius: 50px;
   border: none !important;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
 }
 
 .btnn:hover {
@@ -76,7 +80,7 @@ a {
   margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: var(--primary-color);
+  background-color: var(--primary-color-2);
 }
 
 .nav-menu {
@@ -90,17 +94,18 @@ a {
 }
 
 .nav-link {
-  font-size: 1.2rem;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
   font-weight: 400;
   color: var(--white);
 }
 
 .nav-link:hover {
-  color: var(--primary-color);
+  color: var(--primary-color-2);
 }
 
 .nav-link.active {
-  color: var(--primary-color);
+  color: var(--primary-color-2);
 }
 
 .nav-logo {

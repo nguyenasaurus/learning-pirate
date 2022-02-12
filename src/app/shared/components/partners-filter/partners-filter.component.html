@@ -2,7 +2,8 @@
   <div class="container">
     <h4>Industries</h4>
     <div class="btn-holder">
-      <button class="btn-outline" *ngFor="let item of buttons" (click)="toggleButtons()">
+      <button class="btn-outline" *ngFor="let item of buttons; let i = index" [ngClass]="{'active': i == 0}"
+        (click)="toggleButtons()">
         {{ item }}
       </button>
     </div>

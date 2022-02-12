@@ -1,9 +1,9 @@
 #testimonials {
   background: #263043;
-  height: 611px;
-  min-height: 610px;
-  padding: 150px 0px 150px 150px;
+  padding: 60px 0px 10px 0px;
   width: 100%;
+  display: flex;
+  grid-template-columns: 150px auto;
 }
 
 .row {
@@ -11,8 +11,14 @@
   padding-right: 0px !important;
 }
 
+.is-right {
+  width: 150px;
+  margin-left: auto;
+  margin-left: 0px;
+}
+
 .intro-cont {
-  padding-right: 50px;
+  padding: 0px 80px 0px 60px;
 }
 .intro-cont h3 {
   font-size: 35px;
@@ -23,24 +29,24 @@
 .intro-cont h3 span {
   font-size: 35px;
   line-height: 45px;
-  color: var(--primary-color);
+  color: var(--primary-color-2);
   font-weight: bold;
 }
 .intro-cont p {
-  font-size: 16px;
-  line-height: 30px;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
   color: var(--white-50);
   margin-top: 25px;
 }
 .intro-cont .action {
-  margin-top: 74px;
+  margin-top: 60px;
 }
 
 .content-wrapper .testimony-card {
   background: #ffffff10;
-  width: 580px;
+  width: 500px;
   border-radius: 10px;
-  padding: 62px 20px;
+  padding: 50px 20px 30px 30px;
   margin-right: 30px;
   margin-bottom: 30px;
   display: inline-block;
@@ -56,9 +62,11 @@
 .testimony-card-inner p {
   color: var(--white);
   text-transform: capitalize;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
 }
 .mmb {
-  margin-bottom: -10px;
+  margin-bottom: -4px;
 }
 small {
   color: var(--white-50);
@@ -76,7 +84,7 @@ small {
 .content-wrapper {
   width: 100%;
   white-space: nowrap;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .content-wrapper .slide-indicator {
@@ -163,7 +171,7 @@ small {
   .test .btn {
     padding: 10px 20px;
     color: var(--white);
-    background: var(--primary-color);
+    background: var(--primary-color-2);
     box-shadow: 0px 4px 10px #4169e14d;
     border-radius: 25px;
     border: none !important;

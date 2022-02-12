@@ -47,11 +47,8 @@ ul li::before {
 .board {
   // background: url("../../../../assets/images/about/lauren.png");
   background: var(--secondary-color);
-  background-size: cover;
-  background-position: center center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: right;
+  background: url("../../../../assets/images/about/aba.png") center/cover
+    no-repeat;
   padding: 40px 0px;
 }
 
@@ -61,13 +58,12 @@ ul li::before {
 
 .team-card {
   border-radius: 15px;
-  width: 100%;
+  width: 97%;
   text-align: center;
-  margin-bottom: 20px;
+  margin-top: 24px;
   background: #fff;
   transition: 1s;
   animation: fadeIn 3s;
-  z-index: 1;
 }
 
 .team-card .team-card-body {

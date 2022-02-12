@@ -1,7 +1,7 @@
 .footer {
   background: url("../../../../assets/images/footer.png") center/cover no-repeat;
   height: auto;
-  padding: 50px 0px;
+  padding: 50px 0px 5px 0px;
 }
 
 .foot-1 {
@@ -11,6 +11,8 @@
 
 .foot-1 p {
   color: #ffffff50;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
 }
 
 .foot-1 img {
@@ -26,7 +28,7 @@
 }
 
 .foot {
-  margin-top: 40px;
+  margin-top: 80px;
   padding-top: 60px;
 }
 
@@ -37,20 +39,23 @@
 
 ul li {
   list-style: none;
+  margin-bottom: 5px;
 }
 
 ul li a {
   text-decoration: none;
   color: var(--white-50);
-  margin-bottom: 30px;
-  line-height: 40px;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  margin-bottom: 40px;
   font-weight: 400;
 }
 ul li a:hover {
   text-decoration: none;
   color: var(--white);
-  margin-bottom: 30px;
-  line-height: 40px;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  margin-bottom: 40px;
   font-weight: 400;
 }
 

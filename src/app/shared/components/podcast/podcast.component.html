@@ -1,30 +1,96 @@
-<div class="row play-card" *ngFor="let item of podcasts">
-  <div class="col-d-6 col-t-6">
-    <div class="row">
-      <div class="col-d-2 col-t-2">
-        <div class="pp-holder">
-          <button class="play-pause" (click)="playPause()" [ngClass]="{'paused': play}"></button>
-        </div>
-      </div>
-      <div class="col-d-2 col-t-2">
-
-        <div class="album">
-          <img [src]="item.icon">
-          <img [src]="item.icon" class="content">
-        </div>
-
-      </div>
-      <div class="col-d-8 col-t-8 info">
-        <p class="file-title">{{ item.title }}</p>
-        <small class="file-desc">{{ item.subtitle }}</small>
-      </div>
+<div class="play-card" *ngFor="let item of podcasts; let i = index">
+  <div>
+    <div class="pp-holder">
+      <i class="ri-play-fill" (click)="openFile(item, i)" *ngIf="currentIndex != i"></i>
+      <i class="ri-pause-fill" (click)="openFile(item, i)" *ngIf="currentIndex == i"></i>
     </div>
   </div>
-  <div class="col-d-4 col-t-4">
+  <div>
+    <div class="album">
+      <img [src]="item.icon">
+      <img [src]="item.icon" class="content">
+    </div>
+  </div>
+  <div>
+    <div class="info">
+      <p class="file-title">{{ item.title }}</p>
+      <small class="file-desc">{{ item.subtitle }}</small>
+    </div>
+  </div>
+  <div>
     <p class="file-title">{{ item.author }}</p>
     <small class="file-desc">{{ item.duration}}</small>
   </div>
-  <div class="col-d-2 col-t-2">
+  <div>
     <p class="file-title">{{ item.date }}</p>
+  </div>
+</div>
+
+
+<div class="music-player">
+  <div class="cover">
+    <img [src]="currentFile.file.icon" alt="">
+  </div>
+  <div class="row player">
+
+    <div class="actions">
+      <button class="music-btn-b">
+        <i class="ri-shuffle-line"></i>
+      </button>
+      <button class="music-btn" [disabled]="isFirstPlaying()" (click)="previous()">
+        <i class="ri-rewind-fill"></i>
+      </button>
+      <button class="music-btn" (click)="play(currentFile.index)" [disabled]="state?.error" *ngIf="!state?.playing">
+        <i class="ri-play-fill"></i>
+      </button>
+      <button class="music-btn" (click)="pause()" [disabled]="state?.error" *ngIf="state?.playing">
+        <i class="ri-pause-fill"></i>
+      </button>
+      <button class="music-btn" [disabled]="isLastPlaying()" (click)="next()">
+        <i class="ri-speed-fill"></i>
+      </button>
+      <button class="music-btn-b">
+        <i class="ri-repeat-one-line"></i>
+      </button>
+      <div class="volume">
+        <button class="music-btn">
+          <i class="ri-volume-mute-line"></i>
+        </button>
+        <button class="music-btn">
+          <i class="ri-volume-down-line"></i>
+        </button>
+        <button class="music-btn">
+          <i class="ri-volume-up-line" *ngIf="currentFile.index === currentIndex && !state?.error"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="play-progress">
+
+      <div id="timeline">
+
+        {{ getPercentagePlayed(state?.readableCurrentTime, state?.readableDuration) }}
+
+        <div class="timer">
+          <span>{{ state?.readableCurrentTime }}</span>
+          <span>{{ state?.readableDuration }}</span>
+        </div>
+
+        <div class="progress2 progress-moved">
+          <div class="progress-bar2" [style.width.%]="value">
+          </div>
+        </div>
+
+        <div class="artist">
+          <p>
+            <i class="ri-music-line"></i>
+            <small style="color: #ffffff80;"> {{ currentFile.file.author }} 's &nbsp; </small>
+            {{ currentFile.file.title }}
+          </p>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </div>

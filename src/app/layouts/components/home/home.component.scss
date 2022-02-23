@@ -302,6 +302,229 @@
   height: 20px !important;
 }
 
+// TESTIMONY
+
+#testimonials {
+  background: #263043;
+  padding: 60px 0px 10px 0px;
+  width: 100%;
+  display: flex;
+  grid-template-columns: 150px auto;
+  overflow-x: hidden;
+}
+
+.row {
+  margin-right: 0px !important;
+  padding-right: 0px !important;
+}
+
+.is-right {
+  width: 150px;
+  margin-left: auto;
+  margin-left: 0px;
+}
+
+.intro-cont {
+  padding: 0px 80px 0px 60px;
+}
+.intro-cont h3 {
+  font-size: 35px;
+  line-height: 45px;
+  color: var(--white);
+  font-weight: bold;
+}
+.intro-cont h3 span {
+  font-size: 35px;
+  line-height: 45px;
+  color: var(--primary-color-2);
+  font-weight: bold;
+}
+.intro-cont p {
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  color: var(--white-50);
+  margin-top: 25px;
+}
+.intro-cont .action {
+  margin-top: 60px;
+}
+
+.content-wrapper .testimony-card {
+  background: #ffffff10;
+  width: 500px;
+  border-radius: 10px;
+  padding: 50px 20px 30px 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  display: inline-block;
+  white-space: normal;
+  overflow: auto;
+}
+
+.testimony-card .row {
+  margin-right: 0px !important;
+  padding-right: 0px !important;
+}
+
+.testimony-card-inner p {
+  color: var(--white);
+  text-transform: capitalize;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+}
+
+.mmb {
+  margin-bottom: -4px;
+}
+small {
+  color: var(--white-50);
+  margin-top: -20px;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--white);
+}
+
+.content-wrapper {
+  width: 100%;
+  white-space: nowrap;
+  // overflow: hidden;
+}
+
+.content-wrapper .slide-indicator {
+  width: 25px;
+  height: 0px;
+  border: 2px solid var(--white-50);
+  border-radius: 4px;
+  float: left;
+  margin-right: 15px;
+}
+
+.content-wrapper .slide-indicator:hover {
+  border: 2px solid var(--white);
+}
+
+.content-wrapper .slide-indicator.active {
+  width: 35px;
+  height: 0px;
+  border: 2px solid var(--white);
+  border-radius: 4px;
+  float: left;
+  margin-right: 15px;
+}
+
+.float-bottom {
+  margin-top: 60px;
+  margin-left: -150px;
+}
+
+// NEW WAY
+.testimony-card.anim {
+  position: relative;
+  animation: mymove 0.25s infinite;
+}
+
+@keyframes mymove {
+  from {
+    right: 0px;
+  }
+  to {
+    right: 300px;
+  }
+}
+
+// Media
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 595px) {
+  #testimonials {
+    height: auto;
+    padding: 20px !important;
+    width: 100% !important;
+  }
+
+  .intro-cont .action {
+    margin: 24px 0px;
+  }
+
+  .content-wrapper .testimony-card {
+    background: #ffffff10;
+    width: 100%;
+    border-radius: 10px;
+    padding: 22px 10px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+    white-space: normal;
+    overflow: auto;
+  }
+
+  h3,
+  h4 {
+    font-size: 1.22rem;
+    line-height: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 799px) {
+  #testimonials {
+    background: #263043;
+    height: auto;
+    min-height: 610px;
+    padding: 60px 0px 60px 30px;
+    width: 100%;
+  }
+  .intro-cont .action {
+    margin-top: 24px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1099px) {
+  #testimonials {
+    background: #263043;
+    height: 611px;
+    min-height: 610px;
+    padding: 60px 0px 50px 50px;
+    width: 100%;
+  }
+  .test .btn {
+    padding: 10px 20px;
+    color: var(--white);
+    background: var(--primary-color-2);
+    box-shadow: 0px 4px 10px #4169e14d;
+    border-radius: 25px;
+    border: none !important;
+  }
+}
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
+
+#slide {
+  position: absolute;
+  left: -100px;
+  width: 100px;
+  height: 100px;
+  background: blue;
+  transition: 1s;
+}
+
+.wrapper:hover #slide {
+  transition: 1s;
+  left: 0;
+}
+
+// END
+
 /*---media start----*/
 
 /* Extra small devices (phones, 600px and down) */

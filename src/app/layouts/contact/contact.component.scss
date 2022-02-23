@@ -1,3 +1,6 @@
+#contact {
+  height: 100vh;
+}
 #contact .row {
   flex-shrink: 0;
   width: 100%;
@@ -10,17 +13,20 @@
   background: url("../../../assets/images/contact/Banner.png") center/cover
     no-repeat;
   padding: 50px 0px;
+  height: 100vh;
 }
 
 .righty {
   background: var(--scaffold-background-color);
-  padding: 185px 110px 60px 40px;
+  padding: 180px 30px 10px 40px;
+  height: 100vh;
+  position: relative;
 }
 
 .righty .intro {
   position: relative;
   width: 95%;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   border-bottom: 0.7px solid #b8bacf;
 }
 
@@ -44,26 +50,27 @@
 }
 
 .righty .form-area {
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 .righty .form-area .desc {
   font-weight: 600;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .righty .form-area .btn-holder {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .righty .form-area-left {
-  margin-bottom: 30px;
-  padding-bottom: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
   padding-right: 50px;
 }
 
 .follow-us {
-  margin-top: 120px;
+  position: absolute;
+  bottom: 0;
 }
 .follow-us .h {
   font-weight: 500;

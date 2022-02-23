@@ -54,6 +54,52 @@ export class SpeakingComponent implements OnInit {
     'Leave with strategic tips to increase your ability to learn more effectively and optimally',
   ];
 
+  slides = [
+    {
+      imageSrc: '../../../../assets/images/speaking/Favour Podcast.png',
+      title: '',
+      desc: '',
+      imageAlt: '',
+    },
+    {
+      imageSrc: './../../../assets/images/speaking/Graphic.png',
+      title: '',
+      desc: '',
+      imageAlt: '',
+    },
+    {
+      imageSrc: '../../../../assets/images/speaking/iDX 10 Year Banner (1).png',
+      title: '',
+      desc: '',
+      imageAlt: '',
+    },
+    {
+      imageSrc: '../../../../assets/images/speaking/Spark.png',
+      title: '',
+      desc: '',
+      imageAlt: '',
+    },
+    {
+      imageSrc: '../../../../assets/images/speaking/Spark2.png',
+      title: '',
+      desc: '',
+      imageAlt: '',
+    },
+    {
+      imageSrc: '../../../../assets/images/speaking/Spark2.png',
+      title: '',
+      desc: '',
+      imageAlt: '',
+    },
+    {
+      imageSrc: '../../../../assets/images/speaking/ss15.png',
+      title: '',
+      desc: '',
+      imageAlt: '',
+    },
+    { imageSrc: '', title: '', desc: '', imageAlt: ' ,' },
+  ];
+
   constructor(private titleService: Title) {
     this.titleService.setTitle(this.title);
   }

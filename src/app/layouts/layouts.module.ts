@@ -17,6 +17,10 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactComponent } from './contact/contact.component';
+import { NgImageSliderModule } from 'ng-image-slider';
+import { EventCarouselModule } from '../shared/components/event-carousel/event-carousel.module';
+import { TestimonyCarouselModule } from '../shared/components/testimony-carousel/testimony-carousel.module';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [
@@ -39,8 +43,12 @@ import { ContactComponent } from './contact/contact.component';
     CommonModule,
     RouterModule,
     SharedModule,
+    EventCarouselModule,
+    TestimonyCarouselModule,
     FormsModule,
     ReactiveFormsModule,
+    NgImageSliderModule,
+    SlickCarouselModule,
   ],
 })
 export class LayoutsModule {}

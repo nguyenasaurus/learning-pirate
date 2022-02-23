@@ -1,0 +1,45 @@
+<!-- <div class="options">
+  <div class="option" style="background-image: url()">
+    <div class="shadow"></div>
+
+    <div class="label">
+      <div class="icon">
+        <i class="ri-user-line"></i>
+      </div>
+
+      <div class="info">
+        <div class="main">Amandioma</div>
+        <div class="sub">Ezenwata</div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+<div class="options">
+  <div class="option" *ngFor="let item of items; let i = index" [ngClass]="{'active': i == selectedIndex}"
+    (click)="setActiveItem(item, i)">
+
+    <div class="label">
+      <div class="icon">
+        <img [src]="item.icon" alt="Avatar">
+      </div>
+
+      <div class="info">
+        <div class=" testimony-card-inner">
+          <p [innerHtml]="item.testimony"></p>
+          <p class="mt-20 mmb">{{ item.name }}</p>
+          <small>{{ item.title }}</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="content-wrapper">
+  <div class="slide-indicator " *ngFor="let item of items; let i = index" [ngClass]="{'active': i == selectedIndex}"
+    (click)="setActiveItem(item, i)">
+  </div>
+</div>

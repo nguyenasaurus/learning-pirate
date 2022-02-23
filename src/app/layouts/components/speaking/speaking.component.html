@@ -47,11 +47,11 @@
           <div class="d" [innerHtml]="item.desc" style="color: #fff;"></div>
           <div class="i">
             <small class="uppercase">{{ item.event }}</small>
-            <div class="row-g">
-              <div class="im">
+            <div id="wrapper">
+              <div id="first">
                 <img [src]="item.icon" alt="">
               </div>
-              <span class="t">{{ item.title }}</span>
+              <span id="second">{{ item.title }}</span>
             </div>
           </div>
         </div>
@@ -159,6 +159,22 @@
     <div class="col-d-6 col-t-6 et-right"></div>
   </div>
 
+</section>
+
+<section class="post-events">
+  <div class="container">
+    <div class="row">
+      <div class="col-d-12 col-t-12 mb-4">
+        <h4>Post <span>Events</span></h4>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-d-12 col-t-12">
+        <app-event-carousel [images]="slides" [autoSlide]="true"></app-event-carousel>
+      </div>
+    </div>
+  </div>
 </section>
 
 <app-partners-filter></app-partners-filter>

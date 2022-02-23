@@ -14,7 +14,7 @@ export class MediaComponent implements OnInit {
     { title: 'Podcasts', id: 2 },
     { title: 'Conferences', id: 3 },
   ];
-  activeMenuId = 2;
+  activeMenuId = 1;
 
   constructor(private titleService: Title) {
     this.titleService.setTitle(this.title);

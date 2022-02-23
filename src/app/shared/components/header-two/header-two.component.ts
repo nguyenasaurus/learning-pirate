@@ -13,7 +13,7 @@ export class HeaderTwoComponent implements OnInit {
     { title: 'Learning Design', url: '/learning-design' },
     { title: 'Speaking', url: '/speaking' },
     { title: 'Media', url: '/media' },
-    { title: 'FAQ', url: '/faqs' },
+    // { title: 'FAQ', url: '/faqs' },
     { title: 'Contact Me', url: '/contact-me' },
   ];
   constructor() {}

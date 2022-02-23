@@ -1,12 +1,6 @@
 <section id="partners">
   <div class="container">
     <h4>Industries</h4>
-    <div class="btn-holder">
-      <button class="btn-outline" *ngFor="let item of buttons; let i = index" [ngClass]="{'active': i == 0}"
-        (click)="toggleButtons()">
-        {{ item }}
-      </button>
-    </div>
     <div class="partner-container">
       <div class="partner-item" *ngFor="let item of partners">
         <img [src]="item.icon" alt="" height="50">

@@ -12,8 +12,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutsModule } from './layouts/layouts.module';
 import { ContactModule } from './layouts/contact/contact.module';
 
+import { NgImageSliderModule } from 'ng-image-slider';
+import { EventCarouselModule } from './shared/components/event-carousel/event-carousel.module';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { TestimonyDirective } from './directives/testimony.directive';
+
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TestimonyDirective],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -24,12 +29,15 @@ import { ContactModule } from './layouts/contact/contact.module';
     BrowserAnimationsModule,
     LayoutsModule,
     ContactModule,
+    EventCarouselModule,
     ToastrModule.forRoot({
       timeOut: 10000,
       // positionClass: 'toast-top-full-width',
       preventDuplicates: true,
       progressBar: true,
     }),
+    NgImageSliderModule,
+    SlickCarouselModule,
   ],
   providers: [Title],
   bootstrap: [AppComponent],

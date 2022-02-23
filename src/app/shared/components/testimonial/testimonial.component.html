@@ -19,38 +19,8 @@
           </div>
         </div>
         <div class="col-d-7 col-t-7">
-          <div class="content-wrapper">
-            <div class="testimony-card">
-              <div class="row">
-                <div class="col-d-2 col-t-3">
-                  <img [src]="activeTestimony.icon" alt="Avatar" class="avatar">
-                </div>
-                <div class="col-d-10 col-t-9 testimony-card-inner">
-                  <p [innerHtml]="activeTestimony.testimony"></p>
-                  <p class="mt-20 mmb">{{ activeTestimony.name }}</p>
-                  <small>{{ activeTestimony.title }}</small>
-                </div>
-              </div>
-            </div>
 
-            <div class="testimony-card">
-              <div class="row">
-                <div class="col-d-2">
-                  <img [src]="nextTestimony.icon" alt="Avatar" class="avatar">
-                </div>
-                <div class="col-d-10 col-t-9 testimony-card-inner">
-                  <p [innerHtml]="nextTestimony.testimony"></p>
-                  <p class="mt-30 mmb">{{ nextTestimony.name }}</p>
-                  <small>{{ nextTestimony.title }}</small>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="content-wrapper">
-            <div class="slide-indicator" *ngFor="let item of testimonies"
-              [ngClass]="{'active': activeTestimony.id == item.id}"></div>
-          </div>
+          <app-testimony-carousel [items]="testimonies" [autoSlide]="true"></app-testimony-carousel>
 
         </div>
       </div>

@@ -17,6 +17,9 @@ import { ArticlesComponent } from './components/articles/articles.component';
 import { ConferenceComponent } from './components/conference/conference.component';
 import { LetCreateTogetherComponent } from './components/let-create-together/let-create-together.component';
 import { PartnersFilterComponent } from './components/partners-filter/partners-filter.component';
+import { NgImageSliderModule } from 'ng-image-slider';
+import { TestimonyCarouselModule } from './components/testimony-carousel/testimony-carousel.module';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,15 @@ import { PartnersFilterComponent } from './components/partners-filter/partners-f
     LetCreateTogetherComponent,
     PartnersFilterComponent,
   ],
-  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgImageSliderModule,
+    TestimonyCarouselModule,
+    SlickCarouselModule,
+  ],
   exports: [
     FooterComponent,
     HeaderComponent,

@@ -42,12 +42,29 @@
   color: var(--font-color);
 }
 
+.slick-wrapper {
+  width: 1000px;
+  margin: 20px auto;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black !important;
+}
+
 h3,
 h4 {
   font-size: 39px;
   line-height: 58.56px;
   color: #323233;
   font-family: var(--font-family);
+}
+
+a {
+  color: var(--primary-color-2);
+}
+a:hover {
+  color: var(--primary-color);
 }
 
 span {
@@ -188,7 +205,7 @@ textarea {
 }
 
 .btn {
-  padding: 8px 35px;
+  padding: 8px 20px;
   color: var(--white);
   background: var(--primary-color-2);
   box-shadow: 0px 4px 10px #0095e727;
@@ -199,7 +216,7 @@ textarea {
 }
 
 .btn:hover {
-  padding: 8px 35px;
+  padding: 8px 20px;
   color: var(--white);
   background: var(--primary-color-2);
   box-shadow: 0px 4px 10px #0095e727;
@@ -208,17 +225,17 @@ textarea {
 }
 
 .btn-outline {
-  padding: 5px 20px;
+  padding: 8px 20px;
   box-shadow: 0px 4px 10px #0095e727;
   border: 1px solid #ffffff;
   border-radius: 50px;
-  color: var(--primary-colo2r);
+  color: var(--primary-color-2);
   background: transparent !important;
   font-size: var(--font-size);
   line-height: var(--line-height);
 }
 .btn-outline:hover {
-  padding: 5px 50px;
+  padding: 8px 20px;
   box-shadow: 0px 4px 10px #0095e727;
   border: 1px solid var(--secondary-color-2);
   border-radius: 50px;
@@ -454,7 +471,7 @@ span {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 595px) {
   .btn {
-    padding: 10px 20px;
+    padding: 15px 40px;
     color: var(--white);
     background: var(--primary-color-2);
     box-shadow: 0px 4px 10px #4169e14d;
@@ -464,7 +481,7 @@ span {
   }
 
   .btn-outline {
-    padding: 5px 20px;
+    padding: 15px 40px;
     box-shadow: 0px 4px 10px #7851a965;
     border: 1px solid #ffffff;
     border-radius: 25px;
@@ -718,4 +735,13 @@ span {
   .col-d-12 {
     width: 100%;
   }
+}
+
+.teal-bg {
+  background: teal !important;
+  color: white !important;
+}
+
+.clickable {
+  cursor: pointer;
 }

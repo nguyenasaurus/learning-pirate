@@ -1,47 +1,159 @@
-#testimonials {
-  background: #263043;
-  padding: 60px 0px 10px 0px;
-  width: 100%;
+.options {
   display: flex;
-  grid-template-columns: 150px auto;
-  overflow-x: hidden;
+  flex-direction: row;
+  align-items: stretch;
+  overflow: hidden;
+  min-width: 600px;
+  max-width: 900px;
+  width: calc(100% - 100px);
+  height: 270px;
 }
 
-.row {
-  margin-right: 0px !important;
-  padding-right: 0px !important;
+@media screen and (max-width: 718px) {
+  .options {
+    min-width: 520px;
+  }
+  .options .option:nth-child(5) {
+    display: none;
+  }
 }
 
-.is-right {
-  width: 150px;
-  margin-left: auto;
-  margin-left: 0px;
+@media screen and (max-width: 638px) {
+  .options {
+    min-width: 440px;
+  }
+  .options .option:nth-child(4) {
+    display: none;
+  }
 }
 
-.intro-cont {
-  padding: 0px 80px 0px 60px;
+@media screen and (max-width: 558px) {
+  .options {
+    min-width: 360px;
+  }
+  .options .option:nth-child(3) {
+    display: none;
+  }
 }
-.intro-cont h3 {
-  font-size: 35px;
-  line-height: 45px;
+
+@media screen and (max-width: 478px) {
+  .options {
+    min-width: 280px;
+  }
+  .options .option:nth-child(2) {
+    display: none;
+  }
+}
+
+.options .option {
+  position: relative;
+  overflow: hidden;
+  min-width: 60px;
+  margin: 0px 10px;
+  background: #ffffff10;
+  background-size: auto 120%;
+  background-position: center;
+  cursor: pointer;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  height: 240px;
+}
+
+.options .option.active {
+  flex-grow: 10000;
+  transform: scale(1);
+  max-width: 500px;
+  margin: 0;
+  border-radius: 10px;
+  background-size: auto 100%;
+  padding: 50px 30px 30px 30px;
+  margin-bottom: 30px;
+}
+
+.options .option.active .shadow {
+  box-shadow: inset 0 -120px 120px -120px #000000,
+    inset 0 -120px 120px -100px #000000;
+}
+
+.options .option.active .label {
+  // top: 20px;
+  left: 20px;
   color: var(--white);
-  font-weight: bold;
 }
-.intro-cont h3 span {
-  font-size: 35px;
-  line-height: 45px;
-  color: var(--primary-color-2);
-  font-weight: bold;
+
+.options .option.active .label .info > {
+  left: 0;
+  opacity: 1;
 }
-.intro-cont p {
-  font-size: var(--font-size);
-  line-height: var(--line-height);
-  color: var(--white-50);
-  margin-top: 25px;
+
+.options .option:not(.active) {
+  flex-grow: 1;
+  border-radius: 30px;
 }
-.intro-cont .action {
-  margin-top: 60px;
+
+.options .option:not(.active) .shadow {
+  bottom: -40px;
+  box-shadow: inset 0 -120px 0 -120px #000000, inset 0, -120px 0, -100px #000000;
 }
+
+.options .option:not(.active) .label {
+  bottom: 10px;
+  left: 10px;
+}
+
+.options .option:not(.active) .label .info > div {
+  left: 10px;
+  opacity: 0;
+}
+
+.options .option .shadow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.options .option .label {
+  display: flex;
+  position: absolute;
+  right: 0;
+  height: 40px;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.options .option .label .icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 40px;
+  max-width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: 1px solid var(--white);
+  background-color: transparent;
+  color: var(--defaultBackground);
+  margin-left: 3px;
+}
+
+.options .option .label .info > div {
+  position: relative;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.options .option .label .info .main {
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+
+.options .option .label .info .sub {
+  transition-delay: 0.1s;
+}
+
+// from testimony comp
 
 .content-wrapper .testimony-card {
   background: #ffffff10;
@@ -100,6 +212,7 @@ small {
 
 .content-wrapper .slide-indicator:hover {
   border: 2px solid var(--white);
+  cursor: pointer;
 }
 
 .content-wrapper .slide-indicator.active {

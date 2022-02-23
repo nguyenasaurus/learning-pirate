@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { trigger, transition, animate, style } from '@angular/animations';
 
 @Component({
   selector: 'app-testimonial',
@@ -46,6 +47,8 @@ export class TestimonialComponent implements OnInit {
   nextTestimonyId: any;
   dataRefresher: any;
 
+  visible = true;
+
   constructor() {}
 
   ngOnInit(): void {
@@ -59,6 +62,7 @@ export class TestimonialComponent implements OnInit {
   // Fetch testimony every 3 seconds
   refreshData() {
     this.dataRefresher = setInterval(() => {
+      // this.visible = false;
       this.nextTestimonyId = this.activeTestimony.id + 1;
       if (this.nextTestimonyId > this.testimonies.length) {
         this.activeTestimony = this.testimonies[0];
@@ -68,10 +72,13 @@ export class TestimonialComponent implements OnInit {
       } else {
         this.nextSlide();
       }
+      // this.visible = false;
+      // this.nextSlide();
     }, 5000);
   }
 
   nextSlide() {
+    // this.visible = true;
     let testimony = this.testimonies.find(
       (el) => el.id == this.nextTestimonyId
     );
@@ -84,5 +91,9 @@ export class TestimonialComponent implements OnInit {
       console.log('DONE');
       this.nextTestimony = this.testimonies[0];
     }
+
+    // if (this.testimonies.length > 0) {
+    //   this.testimonies.push(this.testimonies.shift()!);
+    // }
   }
 }

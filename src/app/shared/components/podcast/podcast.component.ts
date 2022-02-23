@@ -108,7 +108,7 @@ export class PodcastComponent implements OnInit {
     this.currentFile.index = 0;
 
     this.audioService.stop();
-    this.playStream(this.currentFile.file.url);
+    // this.playStream(this.currentFile.file.url);
   }
 
   // Compute percentage played

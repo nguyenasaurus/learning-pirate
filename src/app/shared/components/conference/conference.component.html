@@ -1,10 +1,10 @@
 <div class="row">
-  <div class="col-d-3 col-t-3" *ngFor="let item of articles">
+  <div class="col-d-3 col-t-3" *ngFor="let item of conferences">
     <div class="team-card">
-      <img [src]="item.icon">
+      <img [src]="item.imageUrl">
       <div class="team-card-body">
-        <p class="name">{{ item.name }}</p>
-        <p class="job-title">{{ item.title }}</p>
+        <p class="name">{{ item.title }}</p>
+        <p class="job-title" [innerHtml]="item.description"></p>
       </div>
     </div>
   </div>

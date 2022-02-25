@@ -3,10 +3,10 @@
     <div class="row">
       <div class="col-d-4 col-t-4"></div>
       <div class="col-d-4 col-t-4">
-        <h4>Let's create <span>together</span></h4>
-        <p>Stop performing for the short term. Start learning for the long.</p>
-        <div class="btn-holder">
-          <button class="btn">Let us Chat</button>
+        <h4 [innerHtml]="sectionTwo.title"></h4>
+        <p>{{ sectionTwo.desc }}</p>
+        <div class="btn-holder" [routerLink]="sectionTwo.btnLink">
+          <button class="btn">{{ sectionTwo.btnText }}</button>
         </div>
       </div>
       <div class="col-d-4 col-t-4"></div>

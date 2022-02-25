@@ -21,6 +21,9 @@ import { NgImageSliderModule } from 'ng-image-slider';
 import { EventCarouselModule } from '../shared/components/event-carousel/event-carousel.module';
 import { TestimonyCarouselModule } from '../shared/components/testimony-carousel/testimony-carousel.module';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { NextDirective } from '../directives/next.directive';
+import { PrevDirective } from '../directives/prev.directive';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     BlogComponent,
     MembershipComponent,
     PrivateCoachingComponent,
+    NextDirective,
+    PrevDirective,
   ],
   imports: [
     CommonModule,
@@ -49,6 +54,12 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     ReactiveFormsModule,
     NgImageSliderModule,
     SlickCarouselModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      // positionClass: 'toast-top-full-width',
+      preventDuplicates: true,
+      progressBar: true,
+    }),
   ],
 })
 export class LayoutsModule {}

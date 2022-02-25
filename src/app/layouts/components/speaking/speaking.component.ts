@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import * as $ from 'jquery';
+import {
+  SpeakingSectionFour,
+  SpeakingSectionOne,
+  SpeakingSectionThree,
+  SpeakingSectionTwo,
+} from 'src/app/interfaces/speaking';
+import { SpeakingService } from 'src/app/services/speaking.service';
 
 @Component({
   selector: 'app-speaking',
@@ -56,52 +64,104 @@ export class SpeakingComponent implements OnInit {
 
   slides = [
     {
-      imageSrc: '../../../../assets/images/speaking/Favour Podcast.png',
-      title: '',
-      desc: '',
-      imageAlt: '',
+      url: '../../../../assets/images/speaking/favour.png',
+      title: 'iDesignX Live 2021',
+      date: 'February 24 - 25, 2021',
+      subtitle: 'Conference',
+      desc: '<p>Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy Eirmod Tempor Invidunt Ut Labore Et Dolore Magna Aliquyam Erat, Sed Diam Voluptua.</p> </p>Stet Clita Kasd Gubergren, No Sea Takimata Sanctus Est Lorem Ipsum Dolor Sit Amet. Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy.</p>',
     },
     {
-      imageSrc: './../../../assets/images/speaking/Graphic.png',
-      title: '',
-      desc: '',
-      imageAlt: '',
+      url: './../../../assets/images/speaking/Graphic.png',
+      title: 'iDesignX Live 2021',
+      date: 'February 24 - 25, 2021',
+      subtitle: 'Conference',
+      desc: '<p>Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy Eirmod Tempor Invidunt Ut Labore Et Dolore Magna Aliquyam Erat, Sed Diam Voluptua.</p> </p>Stet Clita Kasd Gubergren, No Sea Takimata Sanctus Est Lorem Ipsum Dolor Sit Amet. Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy.</p>',
     },
     {
-      imageSrc: '../../../../assets/images/speaking/iDX 10 Year Banner (1).png',
-      title: '',
-      desc: '',
-      imageAlt: '',
+      url: '../../../../assets/images/speaking/idx.png',
+      title: 'iDesignX Live 2021',
+      date: 'February 24 - 25, 2021',
+      subtitle: 'Conference',
+      desc: '<p>Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy Eirmod Tempor Invidunt Ut Labore Et Dolore Magna Aliquyam Erat, Sed Diam Voluptua.</p> </p>Stet Clita Kasd Gubergren, No Sea Takimata Sanctus Est Lorem Ipsum Dolor Sit Amet. Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy.</p>',
     },
     {
-      imageSrc: '../../../../assets/images/speaking/Spark.png',
-      title: '',
-      desc: '',
-      imageAlt: '',
+      url: '../../../../assets/images/speaking/Spark.png',
+      title: 'iDesignX Live 2021',
+      date: 'February 24 - 25, 2021',
+      subtitle: 'Conference',
+      desc: '<p>Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy Eirmod Tempor Invidunt Ut Labore Et Dolore Magna Aliquyam Erat, Sed Diam Voluptua.</p> </p>Stet Clita Kasd Gubergren, No Sea Takimata Sanctus Est Lorem Ipsum Dolor Sit Amet. Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy.</p>',
     },
     {
-      imageSrc: '../../../../assets/images/speaking/Spark2.png',
-      title: '',
-      desc: '',
-      imageAlt: '',
+      url: '../../../../assets/images/speaking/Spark2.png',
+      title: 'iDesignX Live 2021',
+      date: 'February 24 - 25, 2021',
+      subtitle: 'Conference',
+      desc: '<p>Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy Eirmod Tempor Invidunt Ut Labore Et Dolore Magna Aliquyam Erat, Sed Diam Voluptua.</p> </p>Stet Clita Kasd Gubergren, No Sea Takimata Sanctus Est Lorem Ipsum Dolor Sit Amet. Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy.</p>',
     },
     {
-      imageSrc: '../../../../assets/images/speaking/Spark2.png',
-      title: '',
-      desc: '',
-      imageAlt: '',
+      url: '../../../../assets/images/speaking/Spark2.png',
+      title: 'iDesignX Live 2021',
+      date: 'February 24 - 25, 2021',
+      subtitle: 'Conference',
+      desc: '<p>Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy Eirmod Tempor Invidunt Ut Labore Et Dolore Magna Aliquyam Erat, Sed Diam Voluptua.</p> </p>Stet Clita Kasd Gubergren, No Sea Takimata Sanctus Est Lorem Ipsum Dolor Sit Amet. Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy.</p>',
     },
     {
-      imageSrc: '../../../../assets/images/speaking/ss15.png',
-      title: '',
-      desc: '',
-      imageAlt: '',
+      url: '../../../../assets/images/speaking/ss.png',
+      title: 'iDesignX Live 2021',
+      date: 'February 24 - 25, 2021',
+      subtitle: 'Conference',
+      desc: '<p>Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy Eirmod Tempor Invidunt Ut Labore Et Dolore Magna Aliquyam Erat, Sed Diam Voluptua.</p> </p>Stet Clita Kasd Gubergren, No Sea Takimata Sanctus Est Lorem Ipsum Dolor Sit Amet. Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy.</p>',
     },
-    { imageSrc: '', title: '', desc: '', imageAlt: ' ,' },
   ];
 
-  constructor(private titleService: Title) {
+  sectionOne: SpeakingSectionOne = {};
+  sectionOneId = 'seactionOne';
+  canEditSectionOne = false;
+
+  sectionTwo: SpeakingSectionTwo = {};
+  sectionTwoId = 'sectionTwo';
+  canEditSectionTwo = false;
+  chosenItemTwo: any;
+
+  sectionThree: SpeakingSectionThree = {};
+  sectionThreeId = 'secctionThree';
+  canEditSectionThree = false;
+  chosenItemThree: any;
+
+  sectionFour: SpeakingSectionFour = {};
+  sectionFourId = 'sectionFour';
+  canEditSectionFour = false;
+  chosenItemFour: any;
+
+  constructor(
+    private titleService: Title,
+    private speakingService: SpeakingService
+  ) {
     this.titleService.setTitle(this.title);
+
+    this.speakingService
+      .getById(this.sectionOneId)
+      .subscribe((res: SpeakingSectionOne) => {
+        this.sectionOne = res;
+      });
+
+    this.speakingService
+      .getById(this.sectionTwoId)
+      .subscribe((res: SpeakingSectionTwo) => {
+        this.sectionTwo = res;
+      });
+
+    this.speakingService
+      .getById(this.sectionThreeId)
+      .subscribe((res: SpeakingSectionThree) => {
+        this.sectionThree = res;
+      });
+
+    this.speakingService
+      .getById(this.sectionFourId)
+      .subscribe((res: SpeakingSectionFour) => {
+        this.sectionFour = res;
+      });
   }
 
   ngOnInit(): void {}

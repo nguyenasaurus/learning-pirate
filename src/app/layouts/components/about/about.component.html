@@ -4,28 +4,13 @@
   <div class="container">
     <div class="row">
       <div class="col-d-6 col-t-6 cont-left">
-        <h4>I'm <span>Lauren Waldman.</span></h4>
+        <h4 [innerHtml]="sectionOne.title"></h4>
         <div class="desc">
-          <p>Such a pleasure to meet you!</p>
+          <p>{{ sectionOne.subtitle }}</p>
         </div>
-        <div>
-          <p>When Neuroscience found its way into my world, it was game over. All it took was one question, one that
-            we've all, at some point or another have asked ourselves, “how did I not know this!?” it was the question
-            that changed everything.</p>
-          <p>Diving into the science of the brain I became my own best case study and learning experiment. Through my
-            challenging, emotional and victorious learning journey, I came to understand what learning really is, how it
-            feels and how to methodically approach it. All the while gaining more familiarity with the inner workings of
-            my brain. It was and still is a profound experience.</p>
-          <p>It is my passion and purpose to evolve the way we learn now. It's equally important to bring a stronger
-            understanding and awareness to people about the very thing doing the learning and that which makes us all
-            us. The remarkable brain.</p>
-          <p>I am now one of only a few scientific learning designers in this world and dream of creating more. It is a
-            true honor to be a translator for some of the most amazing academics and scientists who dedicate their lives
-            to the study of the brain and I'm humbled to be able to bring this into practice when we learn and design
-            learning.</p>
-        </div>
+        <div [innerHtml]="sectionOne.desc"></div>
         <div class="my-qualifications">
-          <h5>My <span>Qualifications</span></h5>
+          <h5 [innerHtml]="sectionOne.subtitle"></h5>
           <ul>
             <li *ngFor="let item of qualifications">
               {{ item }}
@@ -33,12 +18,14 @@
           </ul>
         </div>
         <div class="btn-holder">
-          <button class="btn">
-            Work with Me <i class="ml-30">&rarr;</i>
+          <button class="btn" [routerLink]="sectionOne.btnLink">
+            {{ sectionOne.btnText }} <i class="ml-30">&rarr;</i>
           </button>
         </div>
       </div>
-      <div class="col-d-6 col-t-6 cont-right"></div>
+      <div class="col-d-6 col-t-6 cont-right" [ngStyle]="{
+        'background-image': 'url('+sectionOne.imageUrl
+      }"></div>
     </div>
   </div>
 </section>

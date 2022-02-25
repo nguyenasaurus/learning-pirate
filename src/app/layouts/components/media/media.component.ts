@@ -13,6 +13,7 @@ export class MediaComponent implements OnInit {
     { title: 'Articles', id: 1 },
     { title: 'Podcasts', id: 2 },
     { title: 'Conferences', id: 3 },
+    { title: 'Webinars', id: 4 },
   ];
   activeMenuId = 1;
 

@@ -8,10 +8,7 @@
           <div class="quote">
             <i class="ri-double-quotes-l"></i>
           </div>
-          <p>For too long, we've been learning the same way, giving little thought to how the brain does it.</p>
-          <p>We've been designing learning that works against the brain's natural processes, as opposed to designing
-            optimally for it.</p>
-          <p>It's time to change that and that time is now.</p>
+          <div [innerHtml]="sectionOne.quote"></div>
           <div class="space-between">
             <p>&nbsp;</p>
             <div class="quote">
@@ -20,8 +17,8 @@
           </div>
         </div>
         <div class="name">
-          <p>Lauren Waldman</p>
-          <small>Founder, Learning Pirate</small>
+          <p>{{ sectionOne.author }}</p>
+          <small>{{ sectionOne.jobTitle }}</small>
         </div>
       </div>
       <div class="col-d-6 col-t-6"></div>
@@ -32,19 +29,16 @@
 <section class="learning-design-process">
   <div class="container">
     <div class="h">
-      <h4>The Learning <span>Design Process</span></h4>
+      <h4 [innerHtml]="sectionTwo.title"></h4>
     </div>
     <div class="row">
       <div class="col-d-8 col-t-8">
         <div class="d">
-          <p>Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy Eirmod Tempor Invidunt Ut Labore
-            Et
-            Dolore Magna Aliquyam Erat, Sed Diam Voluptua. At Vero Eos Et Accusam Et Justo Duo Dolores Et Ea Rebum. Stet
-            Clita Kasd Gubergren, No Sea Takimata Sanctus Est Lorem Ipsum Dolor Sit Amet.</p>
+          <p>{{ sectionTwo.desc }}</p>
         </div>
         <div class="btn-holder">
-          <button class="btn">
-            Let’s talk about your Learning needs
+          <button class="btn" [routerLink]="sectionTwo.btnLink">
+            {{ sectionTwo.btnText }}
           </button>
         </div>
       </div>

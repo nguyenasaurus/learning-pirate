@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { About, AboutCta } from 'src/app/interfaces/about';
+import { AboutService } from 'src/app/services/about.service';
 
 @Component({
   selector: 'app-about',
@@ -56,8 +58,26 @@ export class AboutComponent implements OnInit {
 
   title = 'About';
 
-  constructor(private titleService: Title) {
+  sectionOne: About = {};
+  sectionOneId = 'sectionOne';
+  canEditSectionOne = false;
+
+  sectionTwo: AboutCta = {};
+  sectionTwoId = 'sectionCta';
+  canEditSectionTwo = false;
+  chosenItemTwo: any;
+
+  constructor(private titleService: Title, private aboutService: AboutService) {
     this.titleService.setTitle(this.title);
+
+    this.aboutService.getById(this.sectionOneId).subscribe((res: About) => {
+      this.sectionOne = res;
+    });
+
+    this.aboutService.getById(this.sectionTwoId).subscribe((res: AboutCta) => {
+      this.sectionTwo = res;
+      console.log(this.sectionTwo);
+    });
   }
 
   ngOnInit(): void {}

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import * as $ from 'jquery';
+import { Podcast } from 'src/app/interfaces/podcast';
 import { StreamState } from 'src/app/interfaces/stream-state';
 import { AudioService } from 'src/app/services/audio.service';
+import { PodcastService } from 'src/app/services/podcast.service';
 
 @Component({
   selector: 'app-podcast',
@@ -9,80 +10,17 @@ import { AudioService } from 'src/app/services/audio.service';
   styleUrls: ['./podcast.component.scss'],
 })
 export class PodcastComponent implements OnInit {
-  podcasts = [
-    {
-      title: 'Come my way',
-      subtitle: 'Episode 02: Making waves in the industry',
-      author: 'TJ Wow Seminar',
-      duration: '05:20',
-      date: '03 Sept. 2021',
-      icon: '../../../../assets/images/podcast/Rectangle 174-6.png',
-      url: 'https://naijaloaded.store/wp-content/uploads/2021/10/Wande-Coal-Come-My-Way.mp3',
-    },
-    {
-      title: 'The Days of Change',
-      subtitle: 'Episode 02: Making waves in the industry',
-      author: 'TJ Wow Seminar',
-      duration: '05:20',
-      date: '03 Sept. 2021',
-      icon: '../../../../assets/images/podcast/Rectangle 174.png',
-      url: 'https://naijaloaded.store/wp-content/uploads/2022/02/Reekado-Banks-Ft.-Fireboy-DML-%E2%80%93-Ozumba-Mbadiwe-Remix.mp3',
-    },
-    {
-      title: 'CanvassHR',
-      subtitle: 'Episode 02: Making waves in the industry',
-      author: 'TJ Wow Seminar',
-      duration: '05:20',
-      date: '03 Sept. 2021',
-      icon: '../../../../assets/images/podcast/Rectangle 174-1.png',
-      url: 'https://naijaloaded.store/wp-content/uploads/2022/01/2Baba-Smile.mp3',
-    },
-    {
-      title: 'Uncancelled and Unplugged',
-      subtitle: 'Episode 02: Making waves in the industry',
-      author: 'TJ Wow Seminar',
-      duration: '05:20',
-      date: '03 Sept. 2021',
-      icon: '../../../../assets/images/podcast/Rectangle 174-2.png',
-      url: 'https://naijaloaded.store/wp-content/uploads/2022/01/DJ-YK-Beats-Warisi-Cruise-Beat.mp3',
-    },
-    {
-      title: 'One Degree Shift: Spotify',
-      subtitle: 'Episode 02: Making waves in the industry',
-      author: 'TJ Wow Seminar',
-      duration: '05:20',
-      date: '03 Sept. 2021',
-      icon: '../../../../assets/images/podcast/Rectangle 174-3.png',
-      url: 'https://naijaloaded.store/wp-content/uploads/2022/01/T.I-Blaze-Ft.-Olamide-Sometimes-Remix.mp3',
-    },
-    {
-      title: 'One Degree Shift: Apple Music',
-      subtitle: 'Episode 02: Making waves in the industry',
-      author: 'TJ Wow Seminar',
-      duration: '05:20',
-      date: '03 Sept. 2021',
-      icon: '../../../../assets/images/podcast/Rectangle 174-4.png',
-      url: 'https://naijaloaded.store/wp-content/uploads/2021/12/Burna-Boy-Ft.-Wizkid-Ballon-Dor.mp3',
-    },
-    {
-      title: 'The Catalyst',
-      subtitle: 'Episode 02: Making waves in the industry',
-      author: 'TJ Wow Seminar',
-      duration: '05:20',
-      date: '03 Sept. 2021',
-      icon: '../../../../assets/images/podcast/Rectangle 174-5.png',
-      url: 'https://naijaloaded.store/wp-content/uploads/2022/01/Skiibii-Ft.-Davido-Baddest-Boy-Remix.mp3',
-    },
-    {
-      title: 'The Days of Change',
-      subtitle: 'Episode 02: Making waves in the industry',
-      author: 'TJ Wow Seminar',
-      duration: '05:20',
-      date: '03 Sept. 2021',
-      icon: '../../../../assets/images/podcast/Rectangle 174-6.png',
-      url: 'https://naijaloaded.store/wp-content/uploads/2021/10/Wande-Coal-Come-My-Way.mp3',
-    },
-  ];
+  // podcastss = [
+  //   {
+  //     title: 'Come my way',
+  //     subtitle: 'Episode 02: Making waves in the industry',
+  //     author: 'TJ Wow Seminar',
+  //     duration: '05:20',
+  //     date: '03 Sept. 2021',
+  //     icon: '../../../../assets/images/podcast/Rectangle 174-6.png',
+  //     url: 'https://naijaloaded.store/wp-content/uploads/2021/10/Wande-Coal-Come-My-Way.mp3',
+  //   },
+  // ];
 
   currentIndex: any;
   state!: StreamState;
@@ -96,16 +34,27 @@ export class PodcastComponent implements OnInit {
   stopThis = false;
   shuffleThis = false;
 
-  constructor(private audioService: AudioService) {
+  podcasts: Podcast[] = [];
+
+  constructor(
+    private audioService: AudioService,
+    private podcastService: PodcastService
+  ) {
     // listen to stream state
     this.audioService.getState().subscribe((state) => {
       this.state = state;
     });
+
+    this.podcastService.getPodcasts().subscribe((res: Podcast[]) => {
+      this.podcasts = res;
+      this.currentFile.file = this.podcasts[0];
+      this.currentFile.index = 0;
+    });
   }
 
   ngOnInit(): void {
-    this.currentFile.file = this.podcasts[0];
-    this.currentFile.index = 0;
+    // this.currentFile.file = this.podcastss[0];
+    // this.currentFile.index = 0;
 
     this.audioService.stop();
     // this.playStream(this.currentFile.file.url);

@@ -18,35 +18,38 @@
         <div class="row">
           <div class="col-d-4 col-t-4">
             <div class="left-cont">
-              <h3>Joining Forces with Your Brain:
-                <span>The series</span> is coming!</h3>
-              <p>A program built around community, to teach you about your brains, how to learn, and how to design
-                learning
-                with science!</p>
+              <h3 [innerHtml]="sectionFive.title"></h3>
+              <p>{{ sectionFive.subtitle}}</p>
             </div>
           </div>
           <div class="col-d-7 col-t-7">
             <div class="right-cont">
-              <p>Get on the waiting list and while you’re there download some free learning/design tips you can start
-                using
-                now!</p>
+              <p>{{ sectionFive.desc }}</p>
               <div class="mt-40">
-                <div class="row">
-                  <div class="col-d-6">
-                    <input type="text" class="app-input" placeholder="Your Name" />
+                <form (ngSubmit)="onSubmit()" [formGroup]="form">
+                  <div class="row">
+                    <div class="col-d-6">
+                      <input type="text" class="app-input" placeholder="Your Name" #fullName
+                        formControlName="fullName" />
+                    </div>
+                    <div class="col-d-6"></div>
                   </div>
-                  <div class="col-d-6"></div>
-                </div>
-                <div class="row mt-10">
-                  <div class="col-d-6">
-                    <input type="text" class="app-input" placeholder="Your Name" />
+                  <div class="row mt-10">
+                    <div class="col-d-6">
+                      <input type="text" class="app-input" placeholder="Your Email" #email formControlName="email" />
+                    </div>
+                    <div class="col-d-6 test">
+                      <button class="btn ml-30" [disabled]="isSubmitting" [ngClass]="{'disabled': isSubmitting}">
+                        <ng-container *ngIf="isSubmitting">
+                          <i class="ri-loader-2-line"></i> Processing
+                        </ng-container>
+                        <ng-container *ngIf="!isSubmitting">
+                          {{ sectionFive.btnText }}
+                        </ng-container>
+                      </button>
+                    </div>
                   </div>
-                  <div class="col-d-6 test">
-                    <button class="btn ml-30">
-                      Join the waiting list
-                    </button>
-                  </div>
-                </div>
+                </form>
               </div>
             </div>
           </div>

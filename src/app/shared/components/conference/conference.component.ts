@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Conference } from 'src/app/interfaces/conference';
+import { ConferenceService } from 'src/app/services/conference.service';
 
 @Component({
   selector: 'app-conference',
@@ -6,46 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./conference.component.scss'],
 })
 export class ConferenceComponent implements OnInit {
-  articles = [
-    {
-      name: 'Dr.Soracha Cashman',
-      title: 'Cognitive Neuropsychologist',
-      icon: '../../../../assets/images/about/cashman.png',
-    },
-    {
-      name: 'Dr. Elliot Jardin',
-      title: 'Cognitive Neuroscientist/Assistant Professor',
-      icon: '../../../../assets/images/about/jardin.png',
-    },
-    {
-      name: 'Dr. Nick Hobson',
-      title: 'Behavioral Scientist',
-      icon: '../../../../assets/images/about/hobson.png',
-    },
-    {
-      name: 'Carolyn Davison',
-      title:
-        'Ph.D. Candidate (Psychology: Perception/Cognition/Cognitive Neuroscience)',
-      icon: '../../../../assets/images/about/davidson.png',
-    },
-    {
-      name: 'Dr. Kinga Eliasz',
-      title: 'Cognitive And Behavioral Research Scientist',
-      icon: '../../../../assets/images/about/eliasz.png',
-    },
-    {
-      name: 'Dr. Celine Mullins',
-      title: 'Psychologist',
-      icon: '../../../../assets/images/about/mullins.png',
-    },
-    {
-      name: 'Kendelle Bond',
-      title: 'Behavioural Psychologist',
-      icon: '../../../../assets/images/about/bond.png',
-    },
-  ];
+  conferences: Conference[] = [];
 
-  constructor() {}
+  constructor(private conferenceService: ConferenceService) {
+    this.conferenceService.getConferences().subscribe((res: Conference[]) => {
+      this.conferences = res;
+    });
+  }
 
   ngOnInit(): void {}
 }

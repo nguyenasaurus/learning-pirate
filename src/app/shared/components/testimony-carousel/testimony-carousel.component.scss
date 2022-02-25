@@ -65,7 +65,7 @@
   margin: 0;
   border-radius: 10px;
   background-size: auto 100%;
-  padding: 50px 30px 30px 30px;
+  padding: 25px 30px 30px 30px;
   margin-bottom: 30px;
 }
 
@@ -80,7 +80,7 @@
   color: var(--white);
 }
 
-.options .option.active .label .info > {
+.options .option.active .label .info {
   left: 0;
   opacity: 1;
 }
@@ -180,7 +180,7 @@
 }
 
 .mmb {
-  margin-bottom: -4px;
+  margin-bottom: -10px;
 }
 small {
   color: var(--white-50);

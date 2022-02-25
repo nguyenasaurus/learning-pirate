@@ -15,51 +15,67 @@
       <div class="form-area">
         <p class="desc">Send A Message</p>
         <div class="form">
-          <div class="row">
-            <div class="col-d-7 col-t-7">
-              <div class='form-area-left'>
-                <input type="text" class="app-input-line" placeholder="Your full name here">
+          <form (ngSubmit)="onSubmit()" [formGroup]="form">
+            <div class="row">
+              <div class="col-d-7 col-t-7">
+                <div class='form-area-left'>
+                  <input type="text" class="app-input-line" placeholder="Your full name here" #fullName
+                    formControlName="fullName">
 
-                <input type="text" class="app-input-line" placeholder="Your email here">
+                  <input type="text" class="app-input-line" placeholder="Your email here" #email
+                    formControlName="email">
 
-                <textarea type="text" class="app-input-line" placeholder="Type your message here" rows="10"></textarea>
+                  <textarea type="text" class="app-input-line" placeholder="Type your message here" rows="10" #message
+                    formControlName="message"></textarea>
+                </div>
+              </div>
+              <div class="col-d-5 col-t-5">
+                <p>What Are You Curious About?</p>
+
+                <div class='form-area'>
+
+                  <div class="cb-holder">
+                    <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="Project Consultation"
+                      #projectConsultation formControlName="projectConsultation">
+                    <label for="styled-checkbox-1">Project Consultation</label>
+                  </div>
+
+                  <div class="cb-holder">
+                    <input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="Workshops" #workshops
+                      formControlName="workshops">
+                    <label for="styled-checkbox-2">Workshops</label>
+                  </div>
+
+                  <div class="cb-holder">
+                    <input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" value="Speaking" #speaking
+                      formControlName="speaking">
+                    <label for="styled-checkbox-3">Speaking</label>
+                  </div>
+
+                  <div class="cb-holder">
+                    <input class="styled-checkbox" id="styled-checkbox-4" type="checkbox" value="Others" #others
+                      formControlName="others">
+                    <label for="styled-checkbox-4">Others</label>
+                  </div>
+
+                  <div class="btn-holder">
+                    <button class="btn ml-30" [disabled]="isSubmitting" [ngClass]="{'disabled': isSubmitting}"
+                      (click)="onSubmit()">
+                      <ng-container *ngIf="isSubmitting">
+                        <i class="ri-loader-2-line"></i> Processing
+                      </ng-container>
+                      <ng-container *ngIf="!isSubmitting">
+                        Send Message
+                      </ng-container>
+
+                    </button>
+                  </div>
+
+                </div>
+
               </div>
             </div>
-            <div class="col-d-5 col-t-5">
-              <p>What Are You Curious About?</p>
-
-              <div class='form-area'>
-
-                <div class="cb-holder">
-                  <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="Project Consultation">
-                  <label for="styled-checkbox-1">Project Consultation</label>
-                </div>
-
-                <div class="cb-holder">
-                  <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="Workshops">
-                  <label for="styled-checkbox-1">Workshops</label>
-                </div>
-
-                <div class="cb-holder">
-                  <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="Speaking">
-                  <label for="styled-checkbox-1">Speaking</label>
-                </div>
-
-                <div class="cb-holder">
-                  <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="Others">
-                  <label for="styled-checkbox-1">Others</label>
-                </div>
-
-                <div class="btn-holder">
-                  <button class="btn">
-                    Send Message
-                  </button>
-                </div>
-
-              </div>
-
-            </div>
-          </div>
+          </form>
         </div>
       </div>
 

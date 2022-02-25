@@ -20,6 +20,7 @@ import { PartnersFilterComponent } from './components/partners-filter/partners-f
 import { NgImageSliderModule } from 'ng-image-slider';
 import { TestimonyCarouselModule } from './components/testimony-carousel/testimony-carousel.module';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,12 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     NgImageSliderModule,
     TestimonyCarouselModule,
     SlickCarouselModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      // positionClass: 'toast-top-full-width',
+      preventDuplicates: true,
+      progressBar: true,
+    }),
   ],
   exports: [
     FooterComponent,

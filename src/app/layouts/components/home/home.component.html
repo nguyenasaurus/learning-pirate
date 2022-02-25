@@ -3,22 +3,18 @@
     <div class="row">
       <div class="col-d-6 col-t-4">
         <div class="banner-img-holder">
-          <img [src]="bgImage" alt="" class="img">
+          <img [src]="sectionOne.imageUrl" alt="" class="img">
         </div>
       </div>
       <div class="col-d-6 col-t-8">
         <div class="banner-content">
-          <h2>Revolutionizing the way we learn and design learning with <span>brain science.</span></h2>
-          <p class="desc">
-            Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy Eirmod Tempor Invidunt Ut Labore Et
-            Dolore Magna Aliquyam Erat, Sed Diam Voluptua. At Vero Eos Et Accusam Et Justo Duo Dolores Et Ea Rebum. Stet
-            Clita Kasd Gubergren.
-          </p>
+          <h2 [innerHtml]="sectionOne.title"></h2>
+          <p class="desc">{{ sectionOne.subtitle }}</p>
         </div>
 
         <div class="bb">
-          <button class="btn bb" routerLink="/membership">
-            Join the Learning Pirate Crew
+          <button class="btn bb" [routerLink]="sectionOne.btnLink">
+            {{ sectionOne.btnText }}
           </button>
         </div>
 
@@ -53,25 +49,20 @@
     <div class="row">
       <div class="col-d-6 col-t-6">
         <div class="mm-content">
-          <h3>
-            <span>Meet Lauren.<br></span>
-            Science translator, learning scientist, and self-proclaimed pirate.
+          <h3 [innerHtml]="sectionTwo.title">
           </h3>
-          <div class="desc-one">
-            Learning Pirate draws upon the latest research from neuroscience, cognitive and behavioral science to:
-          </div>
-          <div class="desc-two">
-            scientifically design learning teach people about their brains, how they operate and how this knowledge can
-            be accessed to enhance how we think, work, feel and learn for everyday performance and improvement.
-          </div>
+          <div class="desc-one" [innerHtml]="sectionTwo.desc"></div>
+          <div class="desc-two" [innerHtml]="sectionTwo.para"></div>
           <div class="btn-holder">
-            <button class="btn">Work with Lauren</button>
+            <button class="btn bb" [routerLink]="sectionOne.btnLink">
+              {{ sectionTwo.btnText }}
+            </button>
           </div>
         </div>
       </div>
       <div class="col-d-6 col-t-6">
         <div class="mrn parent">
-          <img src="../../../../assets/images/meetmuareen.png" alt="" class="child-bottom">
+          <img [src]="sectionTwo.imageUrl" alt="" class="child-bottom">
         </div>
       </div>
     </div>
@@ -84,38 +75,36 @@
       <div class="col-d-6 col-t-6"></div>
       <div class="col-d-6 col-t-6 hc">
         <div class="help">
-          <h4>How I can <span>help</span> </h4>
+          <h4 [innerHtml]="sectionThree.title"></h4>
         </div>
         <div class="desc">
-          <p>The Cold Hard Truth Is That The E-Learning Industry Is Crowded And Competitive. If You Want To Grow Your
-            Career As A Knowledge Entrepreneur You Need A Course That Delivers More Value!</p>
+          {{sectionThree.subtitle}}
         </div>
         <div class="row">
           <div class="col-d-6">
-            <div class="help-card">
+            <div class="help-card" *ngIf="sectionThree.itemOne">
               <div class="row">
                 <div class="col-d-2 ic">
-                  <img src="../../../../assets/images//file-find.svg" alt="">
+                  <img [src]="sectionThree.itemOne.icon" alt="">
                 </div>
                 <div class="col-d-10">
-                  <h4>Course Assessment</h4>
-                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                    labore et dolore magna aliquyam erat, sed diam voluptua.
+                  <h4>{{ sectionThree.itemOne.title }}</h4>
+                  <p>{{ sectionThree.itemOne.desc }}
                     <a href="javascript:;">click for more</a>
                   </p>
                 </div>
               </div>
             </div>
 
-            <div class="help-card">
+            <div class="help-card" *ngIf="sectionThree.itemTwo">
               <div class="row">
                 <div class="col-d-2 ic">
-                  <img src="../../../../assets/images//brain.svg" alt="">
+                  <img [src]="sectionThree.itemTwo.icon" alt="">
                 </div>
                 <div class="col-d-10">
-                  <h4>Identify Gaps</h4>
-                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                    labore et dolore magna aliquyam erat, sed diam voluptua.<a href="javascript:;">click for more</a>
+                  <h4>{{ sectionThree.itemTwo.title }}</h4>
+                  <p>{{ sectionThree.itemTwo.desc }}
+                    <a href="javascript:;">click for more</a>
                   </p>
                 </div>
               </div>
@@ -123,19 +112,21 @@
 
           </div>
           <div class="col-d-6">
-            <div class="help-card">
+
+            <div class="help-card" *ngIf="sectionThree.itemThree">
               <div class="row">
                 <div class="col-d-2 ic">
-                  <img src="../../../../assets/images//pn.svg" alt="">
+                  <img [src]="sectionThree.itemThree.icon" alt="">
                 </div>
                 <div class="col-d-10">
-                  <h4>Learn about brain science</h4>
-                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                    labore et dolore magna aliquyam erat, sed diam voluptua. <a href="javascript:;">click for more</a>
+                  <h4>{{ sectionThree.itemThree.title }}</h4>
+                  <p>{{ sectionThree.itemThree.desc }}
+                    <a href="javascript:;">click for more</a>
                   </p>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>

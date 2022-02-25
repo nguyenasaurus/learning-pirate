@@ -1,18 +1,27 @@
-<!-- <div *ngIf="images && images.length > 0" class="carousel-container">
-  <div *ngFor="let image of images; let i = index" class="carousel-content">
-    <img [src]="image.imageSrc" [alt]="image.imageAlt" class="fades" [ngClass]="{'image-active': selectedIndex === i}">
+<div class="carousel-container" #carouselContainer>
+  <div class="carousel" #carousel>
+    <figure class="carousel__item item--{{ i + 1 }}" *ngFor="let item of items; let i = index">
+      <img [src]="item.url" [alt]="item.title">
+      <div class="text">
+        <small>{{ item.subtitle }}</small>
+        <div class="space-between">
+          <p class="title">{{ item.title }}</p>
+          <small>{{ item.date }}</small>
+        </div>
+        <div class="dt" [innerHtml]="item.desc"></div>
+      </div>
+    </figure>
   </div>
-
-  <div *ngIf="indicators" class="carousel-dot-container">
-    <span *ngFor="let dot of images; let i = index" class="dot" [ngClass]="{'active': selectedIndex === i}"
-      (click)="selectedImage(i)"></span>
-  </div>
-
-</div> -->
-
-<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)"
-  (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
-  <div ngxSlickItem *ngFor="let slide of images" class="slide">
-    <img [src]="slide.imageSrc" [alt]="slide.imageAlt" class="fades">
-  </div>
-</ngx-slick-carousel>
+  <button class="prev" (click)="prev()" [disabled]="prevSlideFinished || isAnimating"
+    [ngStyle]="{'opacity: 0.1; cursor: default': prevSlideFinished}">
+    <div class="icon">
+      <i class="ri-arrow-left-circle-line"></i>
+    </div>
+  </button>
+  <button class="next" (click)="next()" [disabled]="isAnimating || middleIndex! <= 1"
+    [ngStyle]="{'opacity: 0.1; cursor: default': middleIndex! <= 1}">
+    <div class="icon">
+      <i class="ri-arrow-right-circle-line"></i>
+    </div>
+  </button>
+</div>

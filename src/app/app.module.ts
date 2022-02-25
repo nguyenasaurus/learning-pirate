@@ -15,10 +15,12 @@ import { ContactModule } from './layouts/contact/contact.module';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { EventCarouselModule } from './shared/components/event-carousel/event-carousel.module';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { TestimonyDirective } from './directives/testimony.directive';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
-  declarations: [AppComponent, TestimonyDirective],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -38,6 +40,8 @@ import { TestimonyDirective } from './directives/testimony.directive';
     }),
     NgImageSliderModule,
     SlickCarouselModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [Title],
   bootstrap: [AppComponent],

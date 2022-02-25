@@ -7,14 +7,14 @@
   </div>
   <div>
     <div class="album">
-      <img [src]="item.icon">
-      <img [src]="item.icon" class="content">
+      <img [src]="item.imageUrl">
+      <img [src]="item.imageUrl" class="content">
     </div>
   </div>
   <div>
     <div class="info">
       <p class="file-title">{{ item.title }}</p>
-      <small class="file-desc">{{ item.subtitle }}</small>
+      <small class="file-desc">{{ item.description }}</small>
     </div>
   </div>
   <div>
@@ -22,7 +22,7 @@
     <small class="file-desc">{{ item.duration}}</small>
   </div>
   <div>
-    <p class="file-title">{{ item.date }}</p>
+    <p class="file-title">{{ item.publishedOn }}</p>
   </div>
 </div>
 

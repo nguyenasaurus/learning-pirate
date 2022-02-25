@@ -1,5 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import {
+  Home,
+  HomeSectionFive,
+  HomeSectionFour,
+  HomeSectionThree,
+  HomeSectionTwo,
+  Testimony,
+} from 'src/app/interfaces/home';
+import { HomeService } from 'src/app/services/home.service';
 
 @Component({
   selector: 'app-home',
@@ -135,8 +144,40 @@ export class HomeComponent implements OnInit {
     console.log('beforeChange');
   }
 
-  constructor(private titleService: Title) {
+  sectionOne: Home = {};
+  sectionOneId = 'sectionOne';
+  canEditSectionOne = false;
+
+  sectionTwo: HomeSectionTwo = {};
+  sectionTwoId = 'sectionTwo';
+  canEditSectionTwo = false;
+  chosenItemTwo: any;
+
+  sectionThree: HomeSectionThree = {};
+  sectionThreeId = 'sectionThree';
+  canEditSectionThree = false;
+  chosenItemThree: any;
+
+  testimonials: Testimony[] = [];
+
+  constructor(private titleService: Title, private homeService: HomeService) {
     this.titleService.setTitle(this.title);
+
+    this.homeService.getById(this.sectionOneId).subscribe((res: Home) => {
+      this.sectionOne = res;
+    });
+
+    this.homeService
+      .getById(this.sectionTwoId)
+      .subscribe((res: HomeSectionTwo) => {
+        this.sectionTwo = res;
+      });
+
+    this.homeService
+      .getById(this.sectionThreeId)
+      .subscribe((res: HomeSectionThree) => {
+        this.sectionThree = res;
+      });
   }
 
   ngOnInit(): void {}

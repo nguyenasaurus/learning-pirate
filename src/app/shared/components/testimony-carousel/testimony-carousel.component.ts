@@ -1,12 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-interface carouselImage {
-  icon: string;
-  name: string;
-  title: string;
-  testimony: string;
-}
-
 @Component({
   selector: 'app-testimony-carousel',
   templateUrl: './testimony-carousel.component.html',

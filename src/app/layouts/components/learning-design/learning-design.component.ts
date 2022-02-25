@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import {
+  LearningNeedSectionOne,
+  LearningNeedSectionTwo,
+} from 'src/app/interfaces/learning-design';
+import { LearningDesignService } from 'src/app/services/learning-design.service';
 
 @Component({
   selector: 'app-learning-design',
@@ -35,8 +40,32 @@ export class LearningDesignComponent implements OnInit {
     },
   ];
 
-  constructor(private titleService: Title) {
+  sectionOne: LearningNeedSectionOne = {};
+  sectionOneId = 'sectionOne';
+  canEditSectionOne = false;
+
+  sectionTwo: LearningNeedSectionTwo = {};
+  sectionTwoId = 'sectionTwo';
+  canEditSectionTwo = false;
+  chosenItemTwo: any;
+
+  constructor(
+    private titleService: Title,
+    private learningDesignService: LearningDesignService
+  ) {
     this.titleService.setTitle(this.title);
+
+    this.learningDesignService
+      .getById(this.sectionOneId)
+      .subscribe((res: LearningNeedSectionOne) => {
+        this.sectionOne = res;
+      });
+
+    this.learningDesignService
+      .getById(this.sectionTwoId)
+      .subscribe((res: LearningNeedSectionTwo) => {
+        this.sectionTwo = res;
+      });
   }
 
   ngOnInit(): void {}

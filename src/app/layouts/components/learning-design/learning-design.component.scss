@@ -124,7 +124,7 @@
   }
 }
 
-@media screen and (min-width: 600px) and (max-width: 799px) {
+@media screen and (min-width: 600px) and (max-width: 899px) {
   h3,
   h4 {
     font-size: 1.52rem;
@@ -143,13 +143,21 @@
     padding: 50px 0px;
     text-align: center !important;
   }
+
+  .col-d-3 {
+    width: 50%;
+  }
 }
 
-@media screen and (min-width: 800px) and (max-width: 1099px) {
+@media screen and (min-width: 800px) and (max-width: 1199px) {
   h3,
   h4 {
     font-size: 1.92rem;
     line-height: 2.5rem;
+  }
+
+  .col-d-3 {
+    width: 50%;
   }
 
   .lets-create {

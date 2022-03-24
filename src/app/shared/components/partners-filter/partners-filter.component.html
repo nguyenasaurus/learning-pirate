@@ -1,9 +1,12 @@
 <section id="partners">
   <div class="container">
-    <h4>Industries</h4>
-    <div class="partner-container">
-      <div class="partner-item" *ngFor="let item of partners">
-        <img [src]="item.icon" alt="" height="50">
+    <div class="ttl">
+      <h4>Some of the <span>clients</span></h4>
+
+      <div class="scrollmenu">
+        <div class="img" *ngFor="let item of partners">
+          <img [src]="item.imageUrl">
+        </div>
       </div>
     </div>
   </div>

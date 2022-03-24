@@ -8,7 +8,7 @@ import {
   collectionData,
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { Home, Testimony } from '../interfaces/home';
+import { Home, Partner, SocialMedia, Testimony } from '../interfaces/home';
 
 @Injectable({
   providedIn: 'root',
@@ -33,5 +33,19 @@ export class HomeService {
   joinMailingList(data: any) {
     const mailingListRef = collection(this.firestore, 'mailingList');
     return addDoc(mailingListRef, data);
+  }
+
+  getPartners(): Observable<Partner[]> {
+    const partnersRef = collection(this.firestore, 'partners');
+    return collectionData(partnersRef, { idField: 'id' }) as Observable<
+      Partner[]
+    >;
+  }
+
+  getSocialMediaPages(): Observable<SocialMedia[]> {
+    const socialMediasRef = collection(this.firestore, 'socialMedias');
+    return collectionData(socialMediasRef, { idField: 'id' }) as Observable<
+      SocialMedia[]
+    >;
   }
 }

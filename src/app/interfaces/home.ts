@@ -1,6 +1,7 @@
 export interface Home {
   id?: string;
   title?: string;
+  titleSpan?: string;
   subtitle?: string;
   imageUrl?: string;
   btnText?: string;
@@ -10,6 +11,7 @@ export interface Home {
 export interface HomeSectionTwo {
   id?: string;
   title?: string;
+  titleSpan?: string;
   subtitle?: string;
   imageUrl?: string;
   btnText?: string;
@@ -21,6 +23,7 @@ export interface HomeSectionTwo {
 export interface HomeSectionThree {
   id?: string;
   title?: string;
+  titleSpan?: string;
   subtitle?: string;
   itemOne?: any;
   itemTwo?: any;
@@ -30,6 +33,7 @@ export interface HomeSectionThree {
 export interface HomeSectionFour {
   id?: string;
   title?: string;
+  titleSpan?: string;
   desc?: string;
   btnText?: string;
   btnLink?: string;
@@ -38,8 +42,10 @@ export interface HomeSectionFour {
 export interface HomeSectionFive {
   id?: string;
   title?: string;
+  titleSpan?: string;
   desc?: string;
   btnText?: string;
+  btnUrl?: string;
   subtitle?: string;
 }
 
@@ -49,4 +55,18 @@ export interface Testimony {
   imageUrl?: string;
   testimony?: string;
   name?: string;
+}
+
+export interface Partner {
+  id?: string;
+  title?: string;
+  imageUrl?: string;
+  url?: string;
+}
+
+export interface SocialMedia {
+  id?: string;
+  title?: string;
+  icon?: string;
+  url?: string;
 }

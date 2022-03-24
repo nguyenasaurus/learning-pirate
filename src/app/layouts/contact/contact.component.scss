@@ -71,6 +71,7 @@
 .follow-us {
   position: absolute;
   bottom: 0;
+  width: 600px;
 }
 .follow-us .h {
   font-weight: 500;
@@ -143,4 +144,10 @@
     margin-bottom: 30px;
     border-bottom: 0.7px solid #b8bacf;
   }
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
 }

@@ -5,13 +5,17 @@
     <div class="row">
       <div class="col-d-6 col-t-6">
         <div class="t">
-          <h3 [innerHtml]="sectionOne.title"></h3>
+          <h3>
+            {{ sectionOne.title }} <span>{{ sectionOne.titleSpan }}</span>
+          </h3>
         </div>
         <div class="d" [innerHtml]="sectionOne.desc"></div>
+        <div class="d" [innerHtml]="sectionOne.desc2"></div>
+        <div class="d" [innerHtml]="sectionOne.desc3"></div>
 
         <div class="btn-holder">
           <button class="btn" [routerLink]="sectionOne.btnLink">
-            {{ sectionOne.btnText }} <i class="ml-30">&rarr;</i>
+            {{ sectionOne.btnText }}
           </button>
         </div>
 
@@ -39,9 +43,9 @@
           <div class="i">
             <small class="uppercase">{{ item.event }}</small>
             <div id="wrapper">
-              <div id="first">
+              <!-- <div id="first">
                 <img [src]="item.icon" alt="">
-              </div>
+              </div> -->
               <span id="second">{{ item.title }}</span>
             </div>
           </div>
@@ -63,7 +67,9 @@
   <div class="container">
     <div class="row">
       <div class="col-d-12 col-t-12 tt">
-        <h4 [innerHtml]="sectionTwo.header"></h4>
+        <h4>
+          {{ sectionTwo.header }} <span>{{ sectionTwo.headerSpan }}</span>
+        </h4>
       </div>
     </div>
   </div>
@@ -73,7 +79,12 @@
       <h4 [innerHtml]="sectionTwo.title"></h4>
       <div class="d" [innerHtml]="sectionTwo.desc"></div>
 
-      <div class="audience" [innerHtml]="sectionTwo.par"></div>
+      <div class="audience">
+        <div [innerHtml]="sectionTwo.par"></div>
+        <ul>
+          <li *ngFor="let item of sectionTwo.audienceBenefits">{{ item }}</li>
+        </ul>
+      </div>
 
       <div class="btn-holder">
         <button class="btn">{{ sectionTwo.btnText }}</button>
@@ -81,13 +92,19 @@
     </div>
   </div>
 
+
   <div class="row brain-wide-shut">
     <div class="col-d-6 col-t-6 et-left">
       <h4 [innerHtml]="sectionThree.title"></h4>
       <div class="desc" [innerHtml]="sectionThree.subtitle"></div>
-      <div class="d" [innerHtml]="sectionThree.desc"></div>
+      <!-- <div class="d" [innerHtml]="sectionThree.desc"></div> -->
 
-      <div class="audience" [innerHtml]="sectionThree.par"></div>
+      <div class="audience">
+        <div [innerHtml]="sectionThree.par"></div>
+        <ul>
+          <li *ngFor="let item of sectionThree.audienceBenefits">{{ item }}</li>
+        </ul>
+      </div>
 
       <div class="btn-holder">
         <button class="btn" [routerLink]="sectionThree.btnLink">{{ sectionThree.btnText }}</button>
@@ -97,18 +114,23 @@
   </div>
 
   <div class="row your-brain-on-learning">
+    <div class="col-d-6 col-t-6 et-right"></div>
     <div class="col-d-6 col-t-6 et-left">
       <h4 [innerHtml]="sectionFour.title"></h4>
       <div class="desc" [innerHtml]="sectionFour.subtitle"></div>
-      <div class="d" [innerHtml]="sectionFour.desc"></div>
+      <!-- <div class="d" [innerHtml]="sectionFour.desc"></div> -->
 
-      <div class="audience" [innerHtml]="sectionFour.par"></div>
+      <div class="audience">
+        <div [innerHtml]="sectionFour.par"></div>
+        <ul>
+          <li *ngFor="let item of sectionFour.audienceBenefits">{{ item }}</li>
+        </ul>
+      </div>
 
       <div class="btn-holder">
         <button class="btn" [routerLink]="sectionFour.btnLink">{{ sectionFour.btnText }}</button>
       </div>
     </div>
-    <div class="col-d-6 col-t-6 et-right"></div>
   </div>
 
 </section>
@@ -121,7 +143,17 @@
       </div>
     </div>
 
-    <app-event-carousel [items]="slides" [autoSlide]="true"></app-event-carousel>
+    <!-- <app-event-carousel [items]="slides" [autoSlide]="true"></app-event-carousel> -->
+
+    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)"
+      (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+      <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+        <div class="img-hold">
+          <img src="{{ slide.url }}" alt="" height="294px">
+        </div>
+      </div>
+    </ngx-slick-carousel>
+
   </div>
 </section>
 

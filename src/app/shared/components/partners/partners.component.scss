@@ -1,6 +1,6 @@
 #partners {
   background: var(--scaffold-background-color-2);
-  padding: 50px 50px;
+  padding: 50px 0px;
 }
 
 .partner-container {
@@ -19,6 +19,36 @@
 .partner-item img {
   height: 53px;
   width: auto;
+}
+
+.t-h {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+div.scrollmenu {
+  overflow: auto;
+  white-space: nowrap;
+  padding-left: 105px;
+}
+
+div.scrollmenu .img {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 33px 40px 33px 0px;
+  text-decoration: none;
+}
+
+div.scrollmenu .img img {
+  height: 60px !important;
+}
+
+.center h4 {
+  align-items: center !important;
+  font-size: 39px;
+  line-height: 50px;
 }
 
 /*---media start----*/

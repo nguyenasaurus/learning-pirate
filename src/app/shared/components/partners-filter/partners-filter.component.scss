@@ -82,3 +82,23 @@ h4 {
 
 @media screen and (min-width: 1300px) {
 }
+div.scrollmenu {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu .img {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 33px 40px 33px 0px;
+  text-decoration: none;
+}
+
+div.scrollmenu .img img {
+  height: 60px !important;
+}
+
+.ttl {
+  margin-left: 0px;
+}

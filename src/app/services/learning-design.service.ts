@@ -1,7 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Firestore, doc, docData } from '@angular/fire/firestore';
+import {
+  Firestore,
+  doc,
+  docData,
+  collection,
+  collectionData,
+} from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import {
+  LdProcesses,
   LearningNeedSectionOne,
   LearningNeedSectionTwo,
 } from '../interfaces/learning-design';
@@ -26,5 +33,12 @@ export class LearningDesignService {
     return docData(learningDesignRef, {
       idField: 'id',
     }) as Observable<any>;
+  }
+
+  getProcesses(): Observable<LdProcesses[]> {
+    const ldRef = collection(this.firestore, 'process');
+    return collectionData(ldRef, { idField: 'id' }) as Observable<
+      LdProcesses[]
+    >;
   }
 }

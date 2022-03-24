@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { Partner } from 'src/app/interfaces/home';
+import { HomeService } from 'src/app/services/home.service';
 
 @Component({
   selector: 'app-partners-filter',
@@ -7,17 +9,15 @@ import * as $ from 'jquery';
   styleUrls: ['./partners-filter.component.scss'],
 })
 export class PartnersFilterComponent implements OnInit {
-  partners = [
-    { icon: '../../../../assets/images/speaking/lighting.png', url: '' },
-    { icon: '../../../../assets/images/speaking/liva.png', url: '' },
-    { icon: '../../../../assets/images/speaking/utosia-2.png', url: '' },
-    { icon: '../../../../assets/images/speaking/earth-2.0.png', url: '' },
-    { icon: '../../../../assets/images/speaking/asgardia.png', url: '' },
-  ];
-
   buttons = ['Technology', 'Finance', 'Education', 'Sports & Recreation'];
 
-  constructor() {}
+  partners: Partner[] = [];
+
+  constructor(private homeService: HomeService) {
+    this.homeService.getPartners().subscribe((res: Partner[]) => {
+      this.partners = res;
+    });
+  }
 
   ngOnInit(): void {}
 

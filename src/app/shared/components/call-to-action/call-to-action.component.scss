@@ -47,11 +47,30 @@
 }
 
 .float-bottom {
-  margin-top: 200px;
+  margin-top: 245px;
 }
 
 .test {
   margin-top: 10px;
+}
+
+.center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 16px 0px;
+}
+
+.intro-cont {
+  width: 70%;
+  text-align: center;
+}
+
+.sub-content {
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 70px;
 }
 
 // Media

@@ -15,9 +15,11 @@ import { ContactModule } from './layouts/contact/contact.module';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { EventCarouselModule } from './shared/components/event-carousel/event-carousel.module';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+
+// import { NgxImageGalleryModule } from 'ngx-image-gallery';
 
 @NgModule({
   declarations: [AppComponent],
@@ -42,6 +44,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     SlickCarouselModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
+    // NgxImageGalleryModule,
   ],
   providers: [Title],
   bootstrap: [AppComponent],

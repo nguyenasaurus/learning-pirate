@@ -1,14 +1,16 @@
 <section class="banner">
-  <div class="container">
+  <div class="app-container">
     <div class="row">
-      <div class="col-d-6 col-t-4">
+      <div class="col-d-5 col-t-4">
         <div class="banner-img-holder">
           <img [src]="sectionOne.imageUrl" alt="" class="img">
         </div>
       </div>
-      <div class="col-d-6 col-t-8">
+      <div class="col-d-7 col-t-8">
         <div class="banner-content">
-          <h2 [innerHtml]="sectionOne.title"></h2>
+          <h2>
+            {{ sectionOne.title }} <span>{{ sectionOne.titleSpan }}</span>
+          </h2>
           <p class="desc">{{ sectionOne.subtitle }}</p>
         </div>
 
@@ -21,7 +23,7 @@
       </div>
     </div>
 
-    <div class="row banner-base">
+    <!-- <div class="row banner-base">
       <div class="col-d-6 col-t-6 follow-me">
         <div class="">Follow Me</div>
         <div class="socials">
@@ -37,20 +39,23 @@
           </a>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 
 </section>
 
-<app-partners></app-partners>
-
 <section id="meet-lauren">
-  <div class="container">
+  <div class="app-container">
     <div class="row">
-      <div class="col-d-6 col-t-6">
+      <div class="col-d-7 col-t-7">
         <div class="mm-content">
-          <h3 [innerHtml]="sectionTwo.title">
-          </h3>
+          <div class="pp">
+            <h3>
+              <span>{{ sectionTwo.titleSpan }}</span> <br>
+              {{sectionTwo.title}}
+            </h3>
+
+          </div>
           <div class="desc-one" [innerHtml]="sectionTwo.desc"></div>
           <div class="desc-two" [innerHtml]="sectionTwo.para"></div>
           <div class="btn-holder">
@@ -60,7 +65,7 @@
           </div>
         </div>
       </div>
-      <div class="col-d-6 col-t-6">
+      <div class="col-d-5 col-t-5">
         <div class="mrn parent">
           <img [src]="sectionTwo.imageUrl" alt="" class="child-bottom">
         </div>
@@ -69,16 +74,20 @@
   </div>
 </section>
 
+<app-partners></app-partners>
+
 <section id="helper">
   <div class="container">
     <div class="row">
       <div class="col-d-6 col-t-6"></div>
       <div class="col-d-6 col-t-6 hc">
         <div class="help">
-          <h4 [innerHtml]="sectionThree.title"></h4>
+          <h4>
+            {{ sectionThree.title }} <span>{{ sectionThree.titleSpan }}</span>
+          </h4>
         </div>
-        <div class="desc">
-          {{sectionThree.subtitle}}
+        <div class="desc white">
+          <p>{{sectionThree.subtitle}}</p>
         </div>
         <div class="row">
           <div class="col-d-6">
@@ -89,7 +98,7 @@
                 </div>
                 <div class="col-d-10">
                   <h4>{{ sectionThree.itemOne.title }}</h4>
-                  <p>{{ sectionThree.itemOne.desc }}
+                  <p class="white">{{ sectionThree.itemOne.desc }}
                     <a href="javascript:;">click for more</a>
                   </p>
                 </div>

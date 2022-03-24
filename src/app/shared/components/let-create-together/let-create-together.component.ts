@@ -16,7 +16,6 @@ export class LetCreateTogetherComponent implements OnInit {
   constructor(private aboutService: AboutService) {
     this.aboutService.getById(this.sectionTwoId).subscribe((res: AboutCta) => {
       this.sectionTwo = res;
-      console.log(this.sectionTwo);
     });
   }
 

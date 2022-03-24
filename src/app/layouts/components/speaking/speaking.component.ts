@@ -77,13 +77,13 @@ export class SpeakingComponent implements OnInit {
       subtitle: 'Conference',
       desc: '<p>Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy Eirmod Tempor Invidunt Ut Labore Et Dolore Magna Aliquyam Erat, Sed Diam Voluptua.</p> </p>Stet Clita Kasd Gubergren, No Sea Takimata Sanctus Est Lorem Ipsum Dolor Sit Amet. Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy.</p>',
     },
-    {
-      url: '../../../../assets/images/speaking/idx.png',
-      title: 'iDesignX Live 2021',
-      date: 'February 24 - 25, 2021',
-      subtitle: 'Conference',
-      desc: '<p>Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy Eirmod Tempor Invidunt Ut Labore Et Dolore Magna Aliquyam Erat, Sed Diam Voluptua.</p> </p>Stet Clita Kasd Gubergren, No Sea Takimata Sanctus Est Lorem Ipsum Dolor Sit Amet. Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy.</p>',
-    },
+    // {
+    //   url: '../../../../assets/images/speaking/idx.png',
+    //   title: 'iDesignX Live 2021',
+    //   date: 'February 24 - 25, 2021',
+    //   subtitle: 'Conference',
+    //   desc: '<p>Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy Eirmod Tempor Invidunt Ut Labore Et Dolore Magna Aliquyam Erat, Sed Diam Voluptua.</p> </p>Stet Clita Kasd Gubergren, No Sea Takimata Sanctus Est Lorem Ipsum Dolor Sit Amet. Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy.</p>',
+    // },
     {
       url: '../../../../assets/images/speaking/Spark.png',
       title: 'iDesignX Live 2021',
@@ -165,4 +165,22 @@ export class SpeakingComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  slideConfig = {
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    dots: true,
+  };
+
+  removeSlide() {
+    this.slides.length = this.slides.length - 1;
+  }
+
+  slickInit(e: any) {}
+
+  breakpoint(e: any) {}
+
+  afterChange(e: any) {}
+
+  beforeChange(e: any) {}
 }

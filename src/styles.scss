@@ -54,8 +54,8 @@
 
 h3,
 h4 {
-  font-size: 39px;
-  line-height: 58.56px;
+  font-size: 48.83px;
+  line-height: 70px;
   color: #323233;
   font-family: var(--font-family);
 }
@@ -69,6 +69,11 @@ a:hover {
 
 span {
   color: var(--primary-color-2);
+}
+
+.center {
+  margin: 0 auto;
+  width: 100%;
 }
 
 .app-container {
@@ -197,15 +202,19 @@ textarea {
 }
 
 ::placeholder {
-  color: #c0bebe;
+  color: #263043;
 }
 
 .cb-holder {
-  margin-top: 10px;
+  margin-top: 20px;
+}
+
+.cb-holder span {
+  color: #263043;
 }
 
 .btn {
-  padding: 8px 20px;
+  padding: 20px 50px;
   color: var(--white);
   background: var(--primary-color-2);
   box-shadow: 0px 4px 10px #0095e727;
@@ -216,7 +225,7 @@ textarea {
 }
 
 .btn:hover {
-  padding: 8px 20px;
+  padding: 20px 50px;
   color: var(--white);
   background: var(--primary-color-2);
   box-shadow: 0px 4px 10px #0095e727;
@@ -225,7 +234,7 @@ textarea {
 }
 
 .btn-outline {
-  padding: 8px 20px;
+  padding: 20px 50px;
   box-shadow: 0px 4px 10px #0095e727;
   border: 1px solid #ffffff;
   border-radius: 50px;
@@ -235,12 +244,148 @@ textarea {
   line-height: var(--line-height);
 }
 .btn-outline:hover {
-  padding: 8px 20px;
+  padding: 20px 50px;
   box-shadow: 0px 4px 10px #0095e727;
   border: 1px solid var(--secondary-color-2);
   border-radius: 50px;
   color: var(--white);
   background: var(--secondary-color-2);
+}
+
+// .form__group {
+//   position: relative;
+//   padding: 15px 0 0;
+//   margin-top: 10px;
+// }
+
+// .form__field {
+//   font-family: inherit;
+//   width: 100%;
+//   border: 0;
+//   border-bottom: 1px solid #d2d2d2;
+//   outline: 0;
+//   font-size: 16px;
+//   color: #212121;
+//   padding: 7px 0;
+//   background: transparent;
+//   transition: border-color 0.2s;
+// }
+
+// .form__field::placeholder {
+//   color: transparent;
+// }
+
+// .form__field:placeholder-shown ~ .form__label {
+//   font-size: 16px;
+//   cursor: text;
+//   top: 20px;
+// }
+
+// .form__field:focus ~ .form__label {
+//   position: absolute;
+//   top: 0;
+//   display: block;
+//   transition: 0.2s;
+//   font-size: 12px;
+//   color: #26304395;
+// }
+
+// .form__field:focus ~ .form__label {
+//   color: #263043;
+// }
+
+// .form__field:focus {
+//   padding-bottom: 6px;
+//   border-bottom: 2px solid #263043;
+// }
+
+/* Actual code example */
+$animation-duration: 0.4s;
+
+@mixin label-inactive() {
+  font-size: 16px;
+  transform: translateY(0);
+}
+
+@mixin label-active() {
+  font-size: 0.75rem;
+  transform: translateY(-14px);
+}
+
+.form-field {
+  display: block;
+  margin-bottom: 16px;
+}
+.form-field__label {
+  @include label-active();
+  display: block;
+  font-weight: normal;
+  left: 0;
+  margin: 0;
+  padding: 18px 1px 0;
+  position: absolute;
+  top: 0;
+  transition: all $animation-duration;
+  width: 100%;
+}
+.form-field__control {
+  background: transparent;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.form-field__bar {
+  border-bottom: 2px solid var(--primary-color);
+  bottom: 0;
+  content: "";
+  display: block;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  transform: scaleX(0);
+  transition: all $animation-duration;
+  width: 1%;
+}
+.form-field__input,
+.form-field__textarea {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #999;
+  color: #333;
+  display: block;
+  margin-top: 24px;
+  outline: 0;
+  padding: 0 12px 10px 1px;
+  width: 100%;
+
+  // IE 10-11
+  &:-ms-input-placeholder {
+    ~ .form-field__label {
+      @include label-inactive();
+    }
+  }
+  // All other browsers except Edge
+  &:placeholder-shown {
+    ~ .form-field__label {
+      @include label-inactive();
+    }
+  }
+  &:focus {
+    ~ .form-field__label {
+      color: var(--primary-color);
+      @include label-active();
+    }
+    ~ .form-field__bar {
+      border-bottom: 2px solid var(--primary-color);
+      transform: scaleX(150);
+    }
+  }
+}
+.form-field__textarea {
+  height: 150px;
 }
 
 .capitalize {
@@ -448,11 +593,12 @@ span {
   color: var(--primary-color-2);
 }
 
-.desc p {
+.descc p {
   font-size: var(--font-size);
   line-height: var(--line-height);
   font-weight: 600;
   margin-top: 3px;
+  font-size: 25px;
 }
 
 .bc-title {
@@ -470,6 +616,13 @@ span {
 // Media
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 595px) {
+  .app-container {
+    width: 100%;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+    margin-right: auto;
+    margin-left: auto;
+  }
   .btn {
     padding: 15px 40px;
     color: var(--white);
@@ -492,8 +645,16 @@ span {
   h2,
   h3,
   h4 {
-    font-size: 1.5rem;
-    line-height: 2.1rem;
+    font-size: 1.5rem !important;
+    line-height: 2.1rem !important;
+  }
+
+  .foot img {
+    width: 80%;
+  }
+
+  .hmzm {
+    margin-top: 60px;
   }
 
   .bc-title {
@@ -600,6 +761,18 @@ span {
     font-weight: bold;
   }
 
+  .team-card .team-card-body .name {
+    font-size: 0.7rem;
+  }
+
+  #gallery {
+    padding: 40px 0px 0px 20px;
+  }
+
+  .col-d-3 {
+    width: 50% !important;
+  }
+
   .col-d-1 {
     width: 8.33%;
   }
@@ -613,13 +786,13 @@ span {
     width: 33.33%;
   }
   .col-d-5 {
-    width: 41.66%;
+    width: 44.66%;
   }
   .col-d-6 {
     width: 50%;
   }
   .col-d-7 {
-    width: 58.33%;
+    width: 55.33%;
   }
   .col-d-8 {
     width: 66.66%;
@@ -664,13 +837,13 @@ span {
     width: 33.33%;
   }
   .col-d-5 {
-    width: 41.66%;
+    width: 44.66%;
   }
   .col-d-6 {
     width: 50%;
   }
   .col-d-7 {
-    width: 58.33%;
+    width: 55.33%;
   }
   .col-d-8 {
     width: 66.66%;
@@ -712,13 +885,13 @@ span {
     width: 33.33%;
   }
   .col-d-5 {
-    width: 41.66%;
+    width: 44.66%;
   }
   .col-d-6 {
     width: 50%;
   }
   .col-d-7 {
-    width: 58.33%;
+    width: 55.33%;
   }
   .col-d-8 {
     width: 66.66%;

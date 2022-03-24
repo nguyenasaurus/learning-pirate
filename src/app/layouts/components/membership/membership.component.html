@@ -18,14 +18,33 @@
             <div class="row">
               <div class="col-d-12 col-t-12">
                 <div class='form-area-left'>
-                  <input type="text" class="app-input-line" placeholder="Your Full Name here" #fullName
-                    formControlName="fullName">
 
-                  <input type="text" class="app-input-line" placeholder="Your Message" #message
-                    formControlName="message">
+                  <div class="form-field">
+                    <div class="form-field__control">
+                      <input id="fullName" type="text" class="form-field__input" placeholder=" " #fullName
+                        formControlName="fullName" />
+                      <label for="fullName" class="form-field__label">Full Name</label>
+                      <div class="form-field__bar"></div>
+                    </div>
+                  </div>
 
-                  <input type="text" class="app-input-line" placeholder="Your email here" #email
-                    formControlName="email">
+                  <div class="form-field">
+                    <div class="form-field__control">
+                      <input id="email" type="email" class="form-field__input" placeholder=" " #email
+                        formControlName="email" />
+                      <label for="email" class="form-field__label">Email Address</label>
+                      <div class="form-field__bar"></div>
+                    </div>
+                  </div>
+
+                  <div class="form-field">
+                    <div class="form-field__control">
+                      <textarea id="additionalInfo" class="form-field__textarea" placeholder=" " #message
+                        formControlName="message"></textarea>
+                      <label for="additionalInfo" class="form-field__label">Your Message</label>
+                      <div class="form-field__bar"></div>
+                    </div>
+                  </div>
 
                 </div>
               </div>
@@ -34,7 +53,7 @@
           </form>
         </div>
 
-        <button class="btn ml-30" [disabled]="isSubmitting" [ngClass]="{'disabled': isSubmitting}" (click)="onSubmit()">
+        <button class="btn mt-30" [disabled]="isSubmitting" [ngClass]="{'disabled': isSubmitting}" (click)="onSubmit()">
           <ng-container *ngIf="isSubmitting">
             <i class="ri-loader-2-line"></i> Processing
           </ng-container>

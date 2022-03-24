@@ -67,14 +67,12 @@ export class TestimonialComponent implements OnInit {
 
     this.homeService.getTestimonies().subscribe((res: Testimony[]) => {
       this.testimonies = res;
+      this.activeTestimony =
+        this.testimonies[Math.floor(Math.random() * this.testimonies.length)];
     });
   }
 
   ngOnInit(): void {
-    // this.activeTestimony = this.testimonies[0];
-    // if (this.testimonies.length > 1) {
-    //   this.nextTestimony = this.testimonies[1];
-    // }
     this.refreshData();
   }
 

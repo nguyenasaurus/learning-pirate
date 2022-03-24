@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { ToastrService } from 'ngx-toastr';
+import { SocialMedia } from 'src/app/interfaces/home';
 import { ContactMeService } from 'src/app/services/contact-me.service';
+import { HomeService } from 'src/app/services/home.service';
 
 @Component({
   selector: 'app-contact',
@@ -14,13 +16,20 @@ export class ContactComponent implements OnInit {
 
   isSubmitting = false;
 
+  socials: SocialMedia[] = [];
+
   constructor(
     private contactMeService: ContactMeService,
     private formBuilder: FormBuilder,
     private titleService: Title,
-    private toast: ToastrService
+    private toast: ToastrService,
+    private homeService: HomeService
   ) {
     this.titleService.setTitle(this.title);
+
+    this.homeService.getSocialMediaPages().subscribe((res: SocialMedia[]) => {
+      this.socials = res;
+    });
   }
 
   ngOnInit(): void {}
@@ -91,6 +100,7 @@ export class ContactComponent implements OnInit {
           );
           this.isSubmitting = false;
           this.form.enable;
+          this.form.reset();
         })
         .catch((error) => {
           console.log(error);

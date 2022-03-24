@@ -12,7 +12,8 @@ import {
   setDoc,
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { About } from '../interfaces/about';
+import { About, Gallery, Qualification } from '../interfaces/about';
+import { Bod } from '../interfaces/bod';
 
 @Injectable({
   providedIn: 'root',
@@ -25,5 +26,24 @@ export class AboutService {
     return docData(aboutRef, {
       idField: 'id',
     }) as Observable<About>;
+  }
+
+  getQualifications(): Observable<Qualification[]> {
+    const qualificationRef = collection(this.firestore, 'qualifications');
+    return collectionData(qualificationRef, { idField: 'id' }) as Observable<
+      Qualification[]
+    >;
+  }
+
+  getGallery(): Observable<Gallery[]> {
+    const galleryRef = collection(this.firestore, 'gallery');
+    return collectionData(galleryRef, { idField: 'id' }) as Observable<
+      Gallery[]
+    >;
+  }
+
+  getBods(): Observable<Bod[]> {
+    const galleryRef = collection(this.firestore, 'bods');
+    return collectionData(galleryRef, { idField: 'id' }) as Observable<Bod[]>;
   }
 }

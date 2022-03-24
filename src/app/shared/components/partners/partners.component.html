@@ -1,9 +1,16 @@
 <section id="partners">
-  <div class="container">
-    <div class="partner-container">
-      <div class="partner-item" *ngFor="let item of partners">
-        <img [src]="item.icon" alt="" height="50">
+  <div class="app-container">
+    <div class="row">
+      <div class="col-d-12 col-t-12">
+        <div class="t-h">
+          <h4>Some of the clients I’ve worked <span>with</span></h4>
+        </div>
       </div>
+    </div>
+  </div>
+  <div class="scrollmenu">
+    <div class="img" *ngFor="let item of partners">
+      <img [src]="item.imageUrl" alt="" height="90">
     </div>
   </div>
 </section>

@@ -22,6 +22,8 @@ import { TestimonyCarouselModule } from './components/testimony-carousel/testimo
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ToastrModule } from 'ngx-toastr';
 
+// import { NgxImageGalleryModule } from 'ngx-image-gallery';
+
 @NgModule({
   declarations: [
     FooterComponent,
@@ -54,6 +56,7 @@ import { ToastrModule } from 'ngx-toastr';
       preventDuplicates: true,
       progressBar: true,
     }),
+    // NgxImageGalleryModule,
   ],
   exports: [
     FooterComponent,

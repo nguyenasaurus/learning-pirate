@@ -9,6 +9,8 @@
             <i class="ri-double-quotes-l"></i>
           </div>
           <div [innerHtml]="sectionOne.quote"></div>
+          <div [innerHtml]="sectionOne.para1"></div>
+          <div [innerHtml]="sectionOne.para2" style="margin-top: 12px;"></div>
           <div class="space-between">
             <p>&nbsp;</p>
             <div class="quote">
@@ -29,7 +31,9 @@
 <section class="learning-design-process">
   <div class="container">
     <div class="h">
-      <h4 [innerHtml]="sectionTwo.title"></h4>
+      <h4>
+        {{ sectionTwo.title }} <span>{{ sectionTwo.titleSpan }}</span>
+      </h4>
     </div>
     <div class="row">
       <div class="col-d-8 col-t-8">
@@ -45,11 +49,12 @@
     </div>
 
     <div class="row">
-      <div class="col-d-3 col-t-3" *ngFor="let item of processes">
+      <div class="col-d-3 col-t-12" *ngFor="let item of processes">
         <div class="process-card">
-          <div class="t">{{item.id}}</div>
+          <div class="t">{{item.position}}</div>
           <div class="t">{{ item.title }}</div>
           <div class="d" [innerHtml]="item.desc"></div>
+          <div class="d" [innerHtml]="item.para"></div>
         </div>
       </div>
     </div>

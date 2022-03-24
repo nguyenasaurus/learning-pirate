@@ -1,15 +1,18 @@
 <section class="lets-create">
   <div class="container">
     <div class="row">
-      <div class="col-d-4 col-t-4"></div>
+      <div class="col-d-2 col-t-2"></div>
       <div class="col-d-4 col-t-4">
-        <h4 [innerHtml]="sectionTwo.title"></h4>
-        <p>{{ sectionTwo.desc }}</p>
-        <div class="btn-holder" [routerLink]="sectionTwo.btnLink">
+        <h4>
+          {{ sectionTwo.title }} <span>{{ sectionTwo.titleSpan }}</span>
+        </h4>
+      </div>
+      <div class="col-d-5 col-t-5">
+        <div style="text-align: left;" [innerHtml]="sectionTwo.desc"></div>
+        <div class="btn-holder" [routerLink]="sectionTwo.btnLink" style="text-align: left;">
           <button class="btn">{{ sectionTwo.btnText }}</button>
         </div>
       </div>
-      <div class="col-d-4 col-t-4"></div>
     </div>
   </div>
 </section>

@@ -16,12 +16,6 @@
   color: var(--secondary-color);
 }
 
-.speech .quote i {
-  font-size: 4rem;
-  font-weight: bold;
-  color: #26304330;
-}
-
 .tt {
   padding: 30px 0px;
 }
@@ -58,6 +52,7 @@
   font-size: 2rem;
   font-weight: bold;
   color: var(--primary-color-2);
+  z-index: 99999999;
 }
 .quote .top {
   padding-top: 20px;
@@ -110,7 +105,7 @@
 }
 
 #wrapper {
-  width: 100%;
+  width: 90%;
   overflow: hidden;
 }
 #first {
@@ -118,11 +113,14 @@
 }
 #second {
   float: left;
-  padding-left: 15px;
-  width: 180px;
+  // padding-left: 15px;
+  width: 170px;
   color: var(--white);
 }
 
+.experienced-talks {
+  background: #e8e8ea;
+}
 .row-g {
   display: grid;
   // grid-template-columns: auto auto;
@@ -147,12 +145,12 @@
 }
 
 .change-this .et-left {
-  background-color: #26304320;
+  background-color: #26304310;
 }
 
 .change-this .et-right {
   padding: 40px 170px 40px 0px;
-  background-color: #26304320;
+  background-color: #26304310;
 }
 
 .change-this .et-right .audience {
@@ -166,7 +164,7 @@ ul {
 }
 
 ul li {
-  color: #00000090;
+  margin-bottom: 0.6rem;
 }
 
 ul li::before {
@@ -183,17 +181,18 @@ ul li::before {
 }
 
 .brain-wide-shut {
-  background-color: #26304320;
+  background-color: #26304305;
 }
 
 .brain-wide-shut .et-right {
   background: url("../../../../assets/images/speaking/brainwideshut.png")
     center/cover no-repeat;
+  height: 800px;
 }
 
 .brain-wide-shut .et-left {
   padding: 40px 80px 40px 160px;
-  background-color: #26304320;
+  background-color: #26304305;
 }
 
 .brain-wide-shut .et-right .audience {
@@ -220,7 +219,7 @@ ul li::before {
 
 .your-brain-on-learning .et-left {
   padding: 40px 80px 40px 160px;
-  background-color: #26304340;
+  background-color: #26304310;
 }
 
 .your-brain-on-learning .et-right .audience {
@@ -394,6 +393,10 @@ ul li::before {
     padding: 30px 30px 30px 30px;
     background-color: #26304330;
   }
+
+  .col-d-4 {
+    width: 50%;
+  }
 }
 
 @media screen and (min-width: 1100px) and (max-width: 1299px) {
@@ -401,3 +404,12 @@ ul li::before {
 
 @media screen and (min-width: 1300px) {
 }
+
+.img-hold {
+  margin: 0px 20px 20px 0px;
+}
+// .img-hold img {
+//   width: 350px !important;
+//   height: 294px !important;
+//   margin-right: 30px;
+// }

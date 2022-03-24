@@ -9,10 +9,10 @@ export class HeaderComponent implements OnInit {
   logo = '../../../../assets/images/logo.png';
 
   list = [
-    { title: 'About', url: '/about' },
     { title: 'Learning Design', url: '/learning-design' },
     { title: 'Speaking', url: '/speaking' },
-    { title: 'Media', url: '/media' },
+    // { title: 'Media', url: '/media' },
+    { title: 'About', url: '/about' },
     // { title: 'FAQ', url: '/faqs' },
     { title: 'Contact Me', url: '/contact-me' },
   ];

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SocialMedia } from 'src/app/interfaces/home';
+import { HomeService } from 'src/app/services/home.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,58 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
-  socials = [
-    {
-      icon: '../../../../assets/images/twitter 2.svg',
-      url: 'https://twitter2.com',
-    },
-    {
-      icon: '../../../../assets/images/instagram 2.svg',
-      url: 'https://instagram.com',
-    },
-    {
-      icon: '../../../../assets/images/linkedin 2.svg',
-      url: 'https://linkedin.com',
-    },
-  ];
-
   linksOne = [
-    {
-      title: 'About',
-      url: '/about',
-    },
-    {
-      title: 'Private Coaching',
-      url: '/private-coaching',
-    },
-    {
-      title: 'Membership',
-      url: '/membership',
-    },
-    {
-      title: 'Podcast',
-      url: '/podcast',
-    },
+    { title: 'About', url: '/about' },
+    { title: 'Learning Design', url: '/learning-design' },
+    { title: 'Speaking', url: '/speaking' },
+    { title: 'Contact', url: '/contact-me' },
+    // { title: 'Media', url: '/media', },
   ];
 
-  linksTwo = [
-    {
-      title: 'Media',
-      url: '/media',
-    },
-    {
-      title: 'Contact',
-      url: '/contact-me',
-    },
-    {
-      title: 'Privacy Policy',
-      url: '/privacy-policy',
-    },
-    {
-      title: 'Terms & Conditions',
-      url: '/terms-conditions',
-    },
-  ];
+  // linksTwo = [
+  //   {title: 'Contact', url: '/contact-me'},
+  //   {
+  //     title: 'Privacy Policy',
+  //     url: '/',
+  //   },
+  // ];
 
   contacts = [
     {
@@ -70,7 +35,13 @@ export class FooterComponent implements OnInit {
 
   year = new Date().getFullYear();
 
-  constructor() {}
+  socials: SocialMedia[] = [];
+
+  constructor(private homeService: HomeService) {
+    this.homeService.getSocialMediaPages().subscribe((res: SocialMedia[]) => {
+      this.socials = res;
+    });
+  }
 
   ngOnInit(): void {}
 }

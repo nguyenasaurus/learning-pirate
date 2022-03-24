@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Partner } from 'src/app/interfaces/home';
+import { HomeService } from 'src/app/services/home.service';
 
 @Component({
   selector: 'app-partners',
@@ -6,15 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./partners.component.scss'],
 })
 export class PartnersComponent implements OnInit {
-  partners = [
-    { icon: '../../../../assets/images/lighting.png', url: '' },
-    { icon: '../../../../assets/images/liva.png', url: '' },
-    { icon: '../../../../assets/images/utosia-2.png', url: '' },
-    { icon: '../../../../assets/images/earth-2.0.png', url: '' },
-    { icon: '../../../../assets/images/asgardia.png', url: '' },
-  ];
+  partners: Partner[] = [];
 
-  constructor() {}
+  constructor(private homeService: HomeService) {
+    this.homeService.getPartners().subscribe((res: Partner[]) => {
+      this.partners = res;
+    });
+  }
 
   ngOnInit(): void {}
 }

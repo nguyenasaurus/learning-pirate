@@ -78,7 +78,7 @@ export class MembershipComponent implements OnInit {
             'Request Successful'
           );
           this.isSubmitting = false;
-          this.form.enable;
+          this.form.reset();
         })
         .catch((error) => {
           console.log(error);

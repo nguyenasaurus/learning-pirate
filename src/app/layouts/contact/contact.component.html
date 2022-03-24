@@ -19,14 +19,34 @@
             <div class="row">
               <div class="col-d-7 col-t-7">
                 <div class='form-area-left'>
-                  <input type="text" class="app-input-line" placeholder="Your full name here" #fullName
-                    formControlName="fullName">
 
-                  <input type="text" class="app-input-line" placeholder="Your email here" #email
-                    formControlName="email">
+                  <div class="form-field">
+                    <div class="form-field__control">
+                      <input id="fullName" type="text" class="form-field__input" placeholder=" " #fullName
+                        formControlName="fullName" />
+                      <label for="fullName" class="form-field__label">Full Name</label>
+                      <div class="form-field__bar"></div>
+                    </div>
+                  </div>
 
-                  <textarea type="text" class="app-input-line" placeholder="Type your message here" rows="10" #message
-                    formControlName="message"></textarea>
+                  <div class="form-field">
+                    <div class="form-field__control">
+                      <input id="email" type="email" class="form-field__input" placeholder=" " #email
+                        formControlName="email" />
+                      <label for="email" class="form-field__label">Email Address</label>
+                      <div class="form-field__bar"></div>
+                    </div>
+                  </div>
+
+                  <div class="form-field">
+                    <div class="form-field__control">
+                      <textarea id="additionalInfo" class="form-field__textarea" placeholder=" " #message
+                        formControlName="message"></textarea>
+                      <label for="additionalInfo" class="form-field__label">Your Message</label>
+                      <div class="form-field__bar"></div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
               <div class="col-d-5 col-t-5">
@@ -34,7 +54,7 @@
 
                 <div class='form-area'>
 
-                  <div class="cb-holder">
+                  <div class="cb-holder mt-30">
                     <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="Project Consultation"
                       #projectConsultation formControlName="projectConsultation">
                     <label for="styled-checkbox-1">Project Consultation</label>
@@ -59,7 +79,7 @@
                   </div>
 
                   <div class="btn-holder">
-                    <button class="btn ml-30" [disabled]="isSubmitting" [ngClass]="{'disabled': isSubmitting}"
+                    <button class="btn mt-30" [disabled]="isSubmitting" [ngClass]="{'disabled': isSubmitting}"
                       (click)="onSubmit()">
                       <ng-container *ngIf="isSubmitting">
                         <i class="ri-loader-2-line"></i> Processing
@@ -82,22 +102,10 @@
       <div class="follow-us">
         <p class="h">Follow Us</p>
         <div class="row">
-          <div class="col-d-4 col-t-4">
+          <div class="col-d-4 col-t-4" *ngFor="let item of socials">
             <p>
-              <small class="d">twitter</small><br>
-              <small class="dd">/Laurenwaldman</small>
-            </p>
-          </div>
-          <div class="col-d-4 col-t-4">
-            <p>
-              <small class="d">instagram</small><br>
-              <small class="dd">/Laurenwaldman</small>
-            </p>
-          </div>
-          <div class="col-d-4 col-t-4">
-            <p>
-              <small class="d">linkedin</small><br>
-              <small class="dd">/Laurenwaldman</small>
+              <a [href]="item.url" target="_blank"><small class="d">{{ item.title }}</small><br>
+                <small class="dd">/Laurenwaldman</small></a>
             </p>
           </div>
         </div>

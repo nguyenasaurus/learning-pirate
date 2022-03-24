@@ -20,18 +20,19 @@
     "@angular/platform-browser-dynamic": "~13.0.0",
     "@angular/router": "~13.0.0",
     "@types/gsap": "^3.0.0",
+    "firebase": "^9.4.0",
     "gsap": "^3.9.1",
     "jquery": "^3.6.0",
     "moment": "^2.29.1",
     "ng-image-slider": "^2.8.0",
+    "ngx-image-gallery": "^2.0.5",
     "ngx-slick-carousel": "^0.5.1",
     "ngx-toastr": "^14.2.1",
+    "rxfire": "^6.0.0",
     "rxjs": "~7.4.0",
     "slick-carousel": "^1.8.1",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4",
-    "firebase": "^9.4.0",
-    "rxfire": "^6.0.0"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.0.1",

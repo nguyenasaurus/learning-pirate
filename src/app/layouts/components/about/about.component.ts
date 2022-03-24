@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { About, AboutCta } from 'src/app/interfaces/about';
+import { About, AboutCta, Qualification } from 'src/app/interfaces/about';
+import { Bod } from 'src/app/interfaces/bod';
 import { AboutService } from 'src/app/services/about.service';
 
 @Component({
@@ -9,13 +10,8 @@ import { AboutService } from 'src/app/services/about.service';
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent implements OnInit {
-  breadcrumbTitle = '<h1>YARR</h1><h2><span>You Are Really Ready</span></h2>';
-
-  qualifications = [
-    'Foundations of Neuroscience (Harvardx)',
-    'Medical Neuroscience (Duke)',
-    'Double certified as a learning designer (CTDP)',
-  ];
+  breadcrumbTitle =
+    "<div class='bc-title'><h3 class='white-color'>Reach your peak <br>I'll help you <span>get there</span></h3></div>";
 
   board = [
     {
@@ -67,6 +63,9 @@ export class AboutComponent implements OnInit {
   canEditSectionTwo = false;
   chosenItemTwo: any;
 
+  qualifications: Qualification[] = [];
+  bods: Bod[] = [];
+
   constructor(private titleService: Title, private aboutService: AboutService) {
     this.titleService.setTitle(this.title);
 
@@ -74,9 +73,16 @@ export class AboutComponent implements OnInit {
       this.sectionOne = res;
     });
 
+    this.aboutService.getQualifications().subscribe((res: Qualification[]) => {
+      this.qualifications = res;
+    });
+
+    this.aboutService.getBods().subscribe((res: Bod[]) => {
+      this.bods = res;
+    });
+
     this.aboutService.getById(this.sectionTwoId).subscribe((res: AboutCta) => {
       this.sectionTwo = res;
-      console.log(this.sectionTwo);
     });
   }
 

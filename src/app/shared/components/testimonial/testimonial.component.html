@@ -5,25 +5,62 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-t-12 col-d-12">
-      <div class="row">
-        <div class="col-d-5 col-t-5">
-          <div class="intro-cont">
-            <h3 [innerHtml]="sectionFour.title"></h3>
-            <p>{{ sectionFour.desc }}</p>
-            <div class="action">
-              <button class="btn-outline" (click)="sectionFour.btnLink">
-                {{ sectionFour.btnText }}
-              </button>
+    <div class="col-d-12 col-t-12 ">
+      <div class="intro-cont">
+        <h3>
+          {{ sectionFour.title }} <span>{{ sectionFour.titleSpan }}</span>
+        </h3>
+      </div>
+
+      <div class="testimony-container">
+        <div class="testimony-card" *ngIf="activeTestimony">
+          <div class=" testimony-card-inner">
+            <div class="row">
+              <div class="col-d-3 col-t-3">
+                <div class="image-holder">
+                  <img [src]="activeTestimony.imageUrl" alt="" class="avatar">
+                </div>
+              </div>
+              <div class="col-d-9 col-t-9 hmzm">
+
+                <div class="row">
+                  <div class="col-d-1 col-t-1">
+                    <i class="ri-double-quotes-l quote"></i>
+                  </div>
+                  <div class="col-d-11 col-t-11"></div>
+                </div>
+
+                <div class="row mt-m-33">
+                  <div class="col-d-1 col-t-1"></div>
+                  <div class="col-d-10 col-t-10">
+                    <p>{{ activeTestimony.testimony }}</p>
+                  </div>
+                  <div class="col-d-1 col-t-1"></div>
+                </div>
+
+                <div class="row mt-m-33">
+                  <div class="col-d-11 col-t-11">
+                  </div>
+                  <div class="col-d-1 col-t-1">
+                    <i class="ri-double-quotes-r quote"></i>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-d-1 col-t-1"></div>
+                  <div class="col-d-10 col-t-10">
+                    <p class="mmb">{{ activeTestimony.name }}</p>
+                    <small>{{ activeTestimony.title }}</small>
+                  </div>
+                  <div class="col-d-1 col-t-1"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-d-7 col-t-7">
-
-          <app-testimony-carousel [items]="testimonies" [autoSlide]="false"></app-testimony-carousel>
-
-        </div>
       </div>
+
+      <!-- <app-testimony-carousel [items]="testimonies" [autoSlide]="false"></app-testimony-carousel> -->
     </div>
   </div>
 

@@ -1,7 +1,7 @@
 <section id="call-to-action">
 
   <div class="row">
-    <div class="col-d-1 col-t-1">
+    <div class="col-d-2 col-t-2">
       <div class="rowm">
         <div class="space-between">
           <div class="">
@@ -13,8 +13,23 @@
         </div>
       </div>
     </div>
-    <div class="col-d-9 col-t-9">
-      <div class="mdl">
+    <div class="col-d-8 col-t-8">
+
+      <div class="center">
+        <div class="intro-cont mt-4">
+          <h3>
+            {{ sectionFive.title }} <span>{{ sectionFive.titleSpan }}</span>
+          </h3>
+
+          <div class="sub-content" [innerHtml]="sectionFive.subtitle"></div>
+
+          <button class="btn ml-30" [routerLink]="sectionFive.btnUrl">
+            Join the waiting list
+          </button>
+        </div>
+      </div>
+
+      <!-- <div class="mdl">
         <div class="row">
           <div class="col-d-4 col-t-4">
             <div class="left-cont">
@@ -55,7 +70,7 @@
           </div>
           <div class="col-d-1 col-t-1"></div>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="col-d-2 col-t-2">
       <div class="rowm">

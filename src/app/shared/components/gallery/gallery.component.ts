@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { Gallery } from 'src/app/interfaces/about';
+import { AboutService } from 'src/app/services/about.service';
 
 @Component({
   selector: 'app-gallery',
@@ -7,41 +9,25 @@ import * as $ from 'jquery';
   styleUrls: ['./gallery.component.scss'],
 })
 export class GalleryComponent implements OnInit {
-  images = [
-    '../../../../assets/images/about/Lauren Waldman 2020 DX396-6.png',
-    '../../../../assets/images/about/Lauren Waldman 2020 DX396-5.png',
-    '../../../../assets/images/about/Lauren Waldman 2020 DX396-3.png',
-    '../../../../assets/images/about/Lauren Waldman 2020 DX396-4.png',
-    '../../../../assets/images/about/Lauren Waldman 2020 DX396-2.png',
-    '../../../../assets/images/about/Lauren Waldman 2020 DX396-1.png',
-  ];
-
   slideIndex = 0;
 
-  constructor() {}
+  gallery: Gallery[] = [];
 
-  ngOnInit(): void {
-    $(function () {
-      $('#imgModal').on('click', function () {
-        $('html, body').animate(
-          {
-            scrollTop: '0',
-          },
-          1200
-        );
-      });
+  constructor(private aboutService: AboutService) {
+    this.aboutService.getGallery().subscribe((res: Gallery[]) => {
+      this.gallery = res;
     });
   }
 
+  ngOnInit(): void {}
+
   openModal() {
-    // document.getElementById('imgModal')!.style.display = 'block';
     $('#imgModal').css({
       display: 'block',
     });
   }
 
   closeModal() {
-    // document.getElementById('imgModal')!.style.display = 'none';
     $('#imgModal').css({
       display: 'none',
     });

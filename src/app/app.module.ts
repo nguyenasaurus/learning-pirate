@@ -19,8 +19,6 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 
-// import { NgxImageGalleryModule } from 'ngx-image-gallery';
-
 @NgModule({
   declarations: [AppComponent],
   imports: [
